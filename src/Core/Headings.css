@@ -1,0 +1,30 @@
+
+.button {
+  position: relative;
+  padding: 0.4em 1em;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  font-size: 50px;
+  margin: 0.5em 0.4em;
+}
+
+.button.type {
+  color:#e4c435;
+}
+.button.type::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 0;
+  left: 0;
+  background-color: black;
+  transition: width 0.3s ease-in-out;
+}
+.button.type::after {
+  bottom: 0;
+}
+.button.type:hover::after {
+  width: 150px;
+}
