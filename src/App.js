@@ -6,7 +6,6 @@ import Header from './Components/Header'
 import Footer from './Components/Footer'
 import Aboutus from "./Core/Aboutus";
 
-
 function App() {
   return (
     <div className="App" style={{ width: "100%", overflowX: "hidden" }}>

@@ -14,7 +14,7 @@ const Footer = () => {
               <h5 className="headin5_amrc col_white_amrc pt2">About Us</h5>
 
               <p className="mb10">
-                We at WanderOn are a modern travel community that provides end
+                We at TripShrip are a modern travel community that provides end
                 to end travel packages in India and abroad. We design the best
                 travel itineraries that encourage group traveling for
                 like-minded people. Our services include road trips, trekking
@@ -24,13 +24,13 @@ const Footer = () => {
                 won’t burn a hole in your pocket. Just give us your dates and be
                 ready to experience traveling like never before.
               </p>
-              <p>
+              <p className="mb10">
                 <i className="fa fa-location-arrow"></i> address{" "}
               </p>
-              <p>
+              <p className="mb10">
                 <i className="fa fa-phone"></i> 0123456790{" "}
               </p>
-              <p>
+              <p className="mb10">
                 <i className="fa fa fa-envelope"></i> info@example.com{" "}
               </p>
             </Col>
