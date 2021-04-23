@@ -1,9 +1,9 @@
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
 import Home from "./Core/Home";
-import Header from "./Components/Header";
-import Footer from "./Core/Footer";
+
+import Header from './Components/Header'
+import Footer from './Components/Footer'
 import Aboutus from "./Core/Aboutus";
 
 function App() {

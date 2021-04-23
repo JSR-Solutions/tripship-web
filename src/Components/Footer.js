@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Row, Container } from "react-bootstrap";
-import "./Footer.css";
+import "../Styles/Footer.css";
 import { IoLogoFacebook, IoLogoTwitter, IoLogoWhatsapp } from "react-icons/io";
 import { AiFillInstagram } from "react-icons/ai";
 

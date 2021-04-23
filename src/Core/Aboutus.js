@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "../Core/Aboutus.css";
+import "../Styles/Aboutus.css";
 import Headings from "../Core/Headings";
 import { Row, Col, Container } from "react-bootstrap";
 import $ from "jquery";
