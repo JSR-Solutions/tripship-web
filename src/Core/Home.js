@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
 const Home = () => {
   return (
-    <div style={{backgroundColor:'yellow'}}>
+    <div style={{ backgroundColor: "yellow" }}>
       <h1>Trip Ship</h1>
       <h1>Trip Ship</h1>
       <h1>Trip Ship</h1>
@@ -14,28 +14,24 @@ const Home = () => {
       <h1>Trip Ship</h1>
       <h1>Trip Ship</h1>
       <h1>Trip Ship</h1>
-
       <h1>Trip Ship</h1>
       <h1>Trip Ship</h1>
       <h1>Trip Ship</h1>
       <h1>Trip Ship</h1>
-
-            <h1>Trip Ship</h1>
-            <h1>Trip Ship</h1>
-            <h1>Trip Ship</h1>
-            <h1>Trip Ship</h1>
-            <h1>Trip Ship</h1>
-            <h1>Trip Ship</h1>
-            <h1>Trip Ship</h1>
-            <h1>Trip Ship</h1>
-
-            <h1>Trip Ship</h1>
-            <h1>Trip Ship</h1>
-            <h1>Trip Ship</h1>
-            <h1>Trip Ship</h1>
-            <h1>Trip Ship</h1>      <h1>Trip Ship</h1>
-
-            <h1>Trip Ship</h1>
+      <h1>Trip Ship</h1>
+      <h1>Trip Ship</h1>
+      <h1>Trip Ship</h1>
+      <h1>Trip Ship</h1>
+      <h1>Trip Ship</h1>
+      <h1>Trip Ship</h1>
+      <h1>Trip Ship</h1>
+      <h1>Trip Ship</h1>
+      <h1>Trip Ship</h1>
+      <h1>Trip Ship</h1>
+      <h1>Trip Ship</h1>
+      <h1>Trip Ship</h1>
+      <h1>Trip Ship</h1> <h1>Trip Ship</h1>
+      <h1>Trip Ship</h1>
     </div>
   );
 };
