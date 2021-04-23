@@ -58,7 +58,16 @@
 .landing-page-form1 .button2{
     background-color: #28a745 !important;
 }
-
+@media screen and (max-width: 570px) {
+.landing-page-form1 input{
+    width: 350px;
+}
+}
+@media screen and (max-width: 355px) {
+    .landing-page-form1 input{
+        width: 300px;
+    }
+}
 
 
 
