@@ -10,7 +10,7 @@
 }
 
 .button.type {
-  color:#e4c435;
+  color:black;
 }
 .button.type::after {
   content: "";
