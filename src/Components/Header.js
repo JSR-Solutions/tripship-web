@@ -45,7 +45,7 @@ const Header = ({ history }) => {
 
     useEffect(() => {
         const hamburger = document.querySelector('.hamburger');
-        const navlinks = document.querySelector('.header-main33')
+        const navlinks = document.querySelector('.header-main34')
 
         hamburger.addEventListener("click", () => {
             navlinks.classList.toggle("open");
@@ -71,6 +71,7 @@ const Header = ({ history }) => {
                     <div className='header-main2'>
                         <h6>For Safe Group Travel Post Covid <span>Click Here</span></h6>
                     </div>
+
                     <div className='header-main3'>
                         <div className='header-main31'>
                             <div className="hamburger">

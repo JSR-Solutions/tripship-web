@@ -1,0 +1,83 @@
+.item-one {
+    background: linear-gradient(45deg, rgba(20, 20, 20, 0.45), rgba(52, 54, 15, 0.45)), url(../Assets/p1.jpg);
+    background-size: cover;
+    background-position: right;
+    width: 100%;
+    height: 81vh;
+    /* opacity: 0.85; */
+}
+
+.landing-page-form{
+    /* background-color: violet; */
+    margin: auto;
+    height: 60vh;
+    font-family: 'Poppins'
+}
+.landing-page-form1{
+    width: fit-content;
+    margin: auto;
+    position: relative;
+    top: 32%;
+    /* transform: translateY(-50%); */
+}
+.landing-page-form1 h6{
+    font-size: 24px;
+    font-family: 'Poppins' !important;
+    font-weight: bold;
+    color: white;
+}
+.landing-page-form1 input{
+    width: 540px;
+    height: 40px;
+    border-radius: 25px;
+    margin-top: 8px;
+    padding-left: 15px ;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    font-family: 'Poppins' !important;
+    outline: none;
+}
+.landing-page-form1 input::placeholder{
+    color: white;
+    font-family: 'Poppins' !important;
+}
+.landing-page-form1 button{
+    margin-top: 10px;
+    height: 40px;
+    border-radius: 25px;
+    font-family: 'Poppins' !important;
+    font-size: 16px !important;
+    padding: 0 18px;
+    color: white;
+    border: none;
+}
+.landing-page-form1 .button1{
+    background-color: #0077bf !important;
+}
+.landing-page-form1 .button2{
+    background-color: #28a745 !important;
+}
+
+
+
+
+/*Landing image*/
+.landing-page-images{
+    /* background-color: turquoise; */
+    display: flex;
+    width: fit-content;
+    margin: auto;
+}
+.landing-page-images img{
+    width: 100px;
+}
+.landing-page-images1{
+    margin: auto;
+}
+.landing-page-images2{
+    margin: auto 25px;
+}
+.landing-page-images3{
+    margin: auto;
+}
