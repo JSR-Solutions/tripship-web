@@ -1,5 +1,10 @@
 .col_white_amrc {
     color: #FFF;
+    text-align: left;
+}
+
+.mb10 {
+    text-align: left;
 }
 
 footer {
@@ -34,6 +39,7 @@ footer p {
 .footer_ul_amrc {
     margin: 0px;
     list-style-type: none;
+    text-align: left;
     font-size: 14px;
     padding: 0px 0px 10px 0px;
 }
