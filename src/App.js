@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 import Header from './Components/Header'
 import Footer from './Components/Footer'
 import Aboutus from "./Core/Aboutus";
+import ContactUs from "./Core/ContactUs"
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/aboutus" exact component={Aboutus} />
+          <Route path="/contact-us" exact component={ContactUs}/>
         </Switch>
         <Footer />
       </Router>
