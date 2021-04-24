@@ -43,6 +43,7 @@
     background-color: var(--primary) !important;
     border-color: var(--primary) !important;
     transition: 0.25s ease-in-out;
+    margin-bottom: 20px;
 }
 
 .admin-button:hover {
