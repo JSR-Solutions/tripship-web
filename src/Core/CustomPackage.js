@@ -90,6 +90,35 @@ function CustomPackage(){
         setCust(custom);
       }
 
+      function handleSubmit(event) {
+        const isValid = validate();
+        if (isValid) {
+          db.collection("CustomPackage").add({
+            customEnquiry:cust
+          }).then(()=>{
+          console.log(cust);
+          setCust({name:"",phoneNo:"",email:"",destination:"",noOfPeople:"",budget:"",requirements:""});
+          setName("");
+          setNoOfPeople("");
+          setRequirements("");
+          setPhoneNo("");
+          setBudget("");
+          setEmail("");
+          setDestination("");
+          setErrorName("");
+          setErrorNoOfPeople("");
+          setErrorRequirements("");
+          setErrorPhoneNo("");
+          setErrorBudget("");
+          setErrorEmail("");
+          setErrorDestination("");
+        } )
+          
+        } else if (!isValid) {
+          console.log(ErrorEmail, ErrorName, ErrorPhoneNo);
+        }
+      }
+
 
 
     return(
@@ -180,7 +209,7 @@ function CustomPackage(){
                   />
                 </Form.Group>
                 <br></br>
-                <Button className="h_form_button" >Submit</Button>
+                <Button className="h_form_button" onClick={handleSubmit}>Submit</Button>
               </Form>
               </div>
         </div>
