@@ -3,6 +3,7 @@ import firebase from "firebase";
 import { DataGrid } from "@material-ui/data-grid";
 import AdminSidebar from "./AdminSidebar";
 import { Form } from "react-bootstrap";
+import { Redirect } from "react-router-dom";
 
 function AllPackages() {
   const [packages, setPackages] = useState([]);
@@ -73,8 +74,19 @@ function AllPackages() {
       packageType: pckg.packageType,
     };
   });
+
+  const [redirectPath, setRedirectPath] = useState("");
+  const [redirect, setRedirect] = useState(false);
+
+  const redirectToSingle = (row) => {
+    console.log(row.data);
+    setRedirectPath("/admin/edit/" + row.data.packageType + "/" + row.data.id);
+    setRedirect(true);
+  };
+
   return (
     <div>
+      {redirect ? <Redirect to={redirectPath} /> : null}
       <AdminSidebar />
       <div className="admin-dashboard-main-div">
         <h2>Hello, Admin! Welcome to the All Packages section.</h2>
@@ -103,6 +115,7 @@ function AllPackages() {
                 rows={rows}
                 columns={columns}
                 pageSize={10}
+                onRowSelected={redirectToSingle}
               />
             </div>
           )}

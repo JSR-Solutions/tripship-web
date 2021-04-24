@@ -14,6 +14,7 @@ import AllPackages from "./Admin/AllPackages";
 import AddPackage from "./Admin/AddPackage";
 import CallbackRequests from "./Admin/CallbackRequests";
 import CustomPackageRequests from "./Admin/CustomPackageRequests";
+import EditPackage from "./Admin/EditPackage";
 
 
 function App() {
@@ -50,6 +51,11 @@ function App() {
             path="/admin/customrequests"
             exact
             component={CustomPackageRequests}
+          />
+          <AdminRoute
+            path="/admin/edit/:packageType/:packageId"
+            exact
+            component={EditPackage}
           />
         </Switch>
       </Router>

@@ -1,12 +1,48 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Redirect } from "react-router-dom";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import firebase from "firebase";
+import Modal from "react-bootstrap/Modal";
 
 import "./AdminDashboard.css";
 import AdminSidebar from "./AdminSidebar";
 
-function AddPackage() {
+function MyVerticallyCenteredModal(props) {
+  return (
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Delete Package
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <p>Are you sure you want to delete this package?</p>
+      </Modal.Body>
+      <Modal.Footer>
+        <Row>
+          <Col>
+            <Button className="admin-button" onClick={props.onHide}>
+              Cancel
+            </Button>
+          </Col>
+          <Col>
+            <Button className="admin-button" onClick={props.onDelete}>
+              Delete
+            </Button>
+          </Col>
+        </Row>
+      </Modal.Footer>
+    </Modal>
+  );
+}
+
+function EditPackage(props) {
+  const [modalShow, setModalShow] = React.useState(false);
   const [overviews, setOverviews] = useState([""]);
   const [inclusions, setInclusions] = useState([""]);
   const [terms, setTerms] = useState([""]);
@@ -20,13 +56,48 @@ function AddPackage() {
     { day: "", title: "", desc: "" },
   ]);
   const [pricing, setPricing] = useState([{ type: "", cost: 0 }]);
-  const [packageImage, setPackageImage] = useState(null);
-  const types = ["image/png", "image/jpeg", "image/jpg"];
   const [packageType, setPackageType] = useState("Treks");
-  const [isAdded, setAdded] = useState(false);
+  const [isUpdated, setUpdated] = useState(false);
 
   const db = firebase.firestore();
-  const storage = firebase.storage();
+
+  useEffect(() => {
+    getPackage(props.match.params.packageType);
+  }, [props]);
+
+  const deletePackage = () => {
+    db.collection(props.match.params.packageType)
+      .doc(props.match.params.packageId)
+      .delete()
+      .then(() => {
+        setUpdated(true);
+      });
+  };
+
+  const getPackage = (collection) => {
+    db.collection(collection)
+      .doc(props.match.params.packageId)
+      .get()
+      .then((snapshot) => {
+        if (snapshot) {
+          const data = snapshot.data();
+          setOverviews(data.overviews);
+          setInclusions(data.inclusions);
+          setTerms(data.terms);
+          setThingsNeeded(data.thingsNeeded);
+          setDates(data.dates);
+          setExclusions(data.exclusions);
+          setMap(data.map);
+          setName(data.name);
+          setDuration(data.duration);
+          setDetailedItinerary(data.detailedItinerary);
+          setPricing(data.pricing);
+        }
+      })
+      .then(() => {
+        setPackageType(collection);
+      });
+  };
 
   //Basic handle change function
   const handleChange = (e) => {
@@ -46,14 +117,14 @@ function AddPackage() {
   }
 
   //Package image change handle function
-  function handleImageChange(event) {
-    let selectedFile = event.target.files[0];
-    if (selectedFile && types.includes(selectedFile.type)) {
-      setPackageImage(selectedFile);
-    } else {
-      setPackageImage(null);
-    }
-  }
+  //   function handleImageChange(event) {
+  //     let selectedFile = event.target.files[0];
+  //     if (selectedFile && types.includes(selectedFile.type)) {
+  //       setPackageImage(selectedFile);
+  //     } else {
+  //       setPackageImage(null);
+  //     }
+  //   }
 
   //Overviews dynamic part
   const handleOverviewChange = (e, index) => {
@@ -274,67 +345,43 @@ function AddPackage() {
     setPricing(values);
   };
 
-  //Add Package Function
-  const addPackage = (e) => {
+  const updatePackage = (e) => {
     e.preventDefault();
-    const uploadTask = storage
-      .ref(packageType + "/" + packageImage.name)
-      .put(packageImage);
-
-    uploadTask.on(
-      "state_changed",
-      (snapshot) => {
-        const progress =
-          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        console.log(progress);
-      },
-      (err) => {
-        console.log(err.message);
-      },
-      () => {
-        storage
-          .ref(packageType)
-          .child(packageImage.name)
-          .getDownloadURL()
-          .then((packageImageUrl) => {
-            db.collection(packageType)
-              .add({
-                overviews: overviews,
-                inclusions: inclusions,
-                exclusions: exclusions,
-                map: map,
-                terms: terms,
-                name: name,
-                dates: dates,
-                duration: duration,
-                detailedItinerary: detailedItinerary,
-                pricing: pricing,
-                imageUrl: packageImageUrl,
-                packageType: packageType,
-                thingsNeeded: thingsNeeded,
-              })
-              .then((docRef) => {
-                db.collection(packageType)
-                  .doc(docRef.id)
-                  .update({ packageId: docRef.id })
-                  .then(() => {
-                    setAdded(true);
-                  });
-              });
-          });
-      }
-    );
+    db.collection(packageType)
+      .doc(props.match.params.packageId)
+      .update({
+        overviews: overviews,
+        inclusions: inclusions,
+        exclusions: exclusions,
+        map: map,
+        terms: terms,
+        name: name,
+        dates: dates,
+        duration: duration,
+        detailedItinerary: detailedItinerary,
+        pricing: pricing,
+        packageType: packageType,
+        thingsNeeded: thingsNeeded,
+      })
+      .then(() => {
+        setUpdated(true);
+      });
   };
 
   return (
     <div>
-      {isAdded ? <Redirect to="/admin/allpackages" /> : null}
+      {isUpdated ? <Redirect to="/admin/allpackages" /> : null}
       <AdminSidebar />
+      <MyVerticallyCenteredModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        onDelete={deletePackage}
+      />
       <div className="admin-dashboard-main-div">
-        <h2>Hello, Admin! Welcome to the Add Packages section.</h2>
+        <h2>Hello, Admin! Welcome to the Edit Package section.</h2>
         <p>
-          Please fill all the required fields below to add the package to the
-          website.
+          Please update all the required fields below as per your requirements
+          to update the package details.
         </p>
         <div className="admin-dashboard-content-div">
           <Form className="admin-dashboard-form">
@@ -832,22 +879,12 @@ function AddPackage() {
               </Col>
             </Row>
             <hr />
-            <h5 className="form-admin-title">Package Image</h5>
-            <Row>
-              <Col lg={10}>
-                {" "}
-                <Form.Group className="admin-dashboard-form-group">
-                  <Form.File
-                    id="form-image"
-                    name="packageImage"
-                    onChange={handleImageChange}
-                  />
-                </Form.Group>
-              </Col>
-            </Row>
-            <hr />
-            <Button onClick={addPackage} className="admin-button">
-              Add Package
+            <Button onClick={updatePackage} className="admin-button">
+              Update Package
+            </Button>
+
+            <Button onClick={() => setModalShow(true)} className="admin-button">
+              Delete Package
             </Button>
           </Form>
         </div>
@@ -856,4 +893,4 @@ function AddPackage() {
   );
 }
 
-export default AddPackage;
+export default EditPackage;
