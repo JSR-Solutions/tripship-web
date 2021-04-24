@@ -1,0 +1,74 @@
+.auth-main-div {
+    background: url(../Assets/Liquid-Cheese.svg);
+    height: 100vh !important;
+    width: 100% !important;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-card {
+    min-width: 35vw !important;
+}
+
+.auth-card,
+.auth-input,
+.auth-button {
+    background: rgba(255, 255, 255, 0.25) !important;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37) !important;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 8px !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+}
+
+.auth-card h4,
+.auth-input,
+.auth-button {
+    color: #464444 !important;
+}
+
+.auth-card h4 {
+    margin-bottom: 40px;
+}
+
+.auth-button {
+    width: 100%;
+    transition: 0.25s ease-in-out;
+}
+
+.auth-button:hover {
+    background: rgba(255, 255, 255, 0.5) !important;
+    color: black !important;
+}
+
+.auth-text {
+    margin-top: 24px;
+    color: #464444;
+}
+
+.auth-text a {
+    text-decoration: none !important;
+}
+
+@media screen and (max-width: 1100px) {
+
+    .auth-card {
+        min-width: 40vw !important;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    .auth-card {
+        min-width: 50vw !important;
+    }
+}
+
+@media screen and (max-width: 720px) {
+
+    .auth-card {
+        min-width: 65vw !important;
+    }
+}
