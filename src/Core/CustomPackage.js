@@ -125,11 +125,16 @@ function CustomPackage(){
         <div>
         <Header/>
         <div className="h_custBack">
+        <h1>Custom Package</h1>
+
+        <hr className="contact_hr"></hr>
+        <hr className="contact_hr1"></hr>
         <Row>
         <Col>
         <div>
         <div className="h_customform">
-        <h2>Make your Own Package</h2>
+        <h2>Create your Own Package</h2>
+        <hr className="form_hr"></hr>
         
               <Form>
                 <Form.Group controlId="formname">
