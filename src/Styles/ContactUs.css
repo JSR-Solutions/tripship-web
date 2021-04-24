@@ -1,0 +1,94 @@
+.contact_back{
+    background: linear-gradient(45deg, rgba(44, 44, 44, 0.45), rgba(44, 44, 44, 0.45)), url("../Assets/contactUs_back.jpg");
+   
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   padding-bottom: 150px;
+}
+
+.contact_back h1{
+    font-weight: bolder;
+    color: white;
+    padding-top: 50px;
+    font-size: 50px!important;
+}
+.contact_hr{
+    width: 100px;
+    border-color: orangered;
+    height:4px!important;
+    border-width: 3px;
+    position:absolute;
+    left:50%;
+    transform: translateX(-50%);
+}
+.contact_hr1{
+    width: 30px;
+    border-color: white;
+    height:4px!important;
+    border-width: 3px;
+    position:absolute;
+    left:50%;
+    transform: translateX(-50%);
+}
+.contact-row{
+    margin-top: 150px;
+    
+}
+.form_hr{
+    width: 90px;
+    border-color: orangered;
+    height:4px!important;
+    border-width: 3px;
+    text-align: left;
+    margin-left: 0;
+}
+.contact-form{
+    text-align: left;
+    padding-left: 70px;
+}
+.contact-form h2{
+    color: white;
+    font-weight: bolder;
+
+}
+.contact-address h2{
+    color: white;
+    font-weight: bolder;
+
+}
+.contact-address{
+   text-align: left;
+   color:white;
+}
+.h_form_input{
+    margin-bottom: 10px!important;
+    background-color: transparent!important;
+    color:white!important;
+    border-width: 2px!important;
+    min-width: 200px;
+}
+.h_form_input::placeholder{
+    color: white!important;
+}
+.h_form_button{
+    background-color: orangered!important;
+    border-color: orangered!important;
+    width:90px!important;
+    margin-bottom: 30px;
+}
+.h_form_button:hover{
+    background-color: transparent!important;
+    color: orangered!important;
+    border-width: 2px!important;
+}
+.contact-address h4,img{
+    display: inline;
+    padding-right: 5px;
+}
+.contact-address p{
+    padding-left: 28px;
+}
+
+
+
