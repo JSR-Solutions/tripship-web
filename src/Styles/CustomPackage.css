@@ -32,6 +32,13 @@ box-shadow: 0 8px 32px 0 rgba(43, 43, 48, 0.37);
     font-weight: bolder;
     
 }
+
+.h_error {
+    color: rgb(255, 4, 4) !important;
+    padding-bottom: 5px;
+    margin-top: -10px;
+    text-align: left;
+}
 @media(max-width:800px){
     .custom_qoute{
         display: none;
