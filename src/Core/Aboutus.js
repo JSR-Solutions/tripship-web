@@ -7,7 +7,10 @@ import exp from "../Assets/experience.png";
 import staff from "../Assets/employees.png";
 import price from "../Assets/dollar.png";
 import placeholder from "../Assets/placeholder.png";
-import Animation1 from "../Core/Animation1"
+import Animation1 from "../Core/Animation1";
+import { gsap } from "gsap";
+import { Controller, Scene } from "react-scrollmagic";
+import { TimelineMax, Power4 } from "gsap";
 
 const Aboutus = () => {
   useEffect(() => {
@@ -23,25 +26,35 @@ const Aboutus = () => {
       </div>
       <div className="aboutus-sec1">
         <Headings text="About TripShrip"></Headings>
+        <br></br>
         <Container>
-          <Row>
-            <Col>
-              <Animation1/>
+          <Row className="image-sec">
+            <Col className="abs-col4" xs={12} md={6} lg={5}>
+              <img src="https://images.unsplash.com/photo-1610446591310-33d012d5682d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" />
             </Col>
-            <Col>
+            <Col className="abs-col2" xs={12} md={6} lg={7}>
               Because his mother died when he was very young, Kakashi was raised
               during his early years by his father, Sakumo. Sakumo was famed
               throughout the shinobi world, having saved Konoha on at least one
               occasion; Kakashi in particular revered his father. During one of
               Sakumo's missions - after Kakashi was enrolled in Konoha's Ninja
               Academy - Sakumo made the decision to save the lives of his
-              teammates rather than complete the assignment. The mission's
-              failure had disastrous consequences for the Land of Fire, causing
-              many in Konoha, including the teammates he saved, to vilify him
-              for abandoning his duties. Disgraced, Sakumo committed suicide.
-              Seeing what his father went through and determined not to make the
-              same mistakes, Kakashi decided that following the Shinobi Rules
-              must always take priority.
+              teammates rather than complete the assignment.
+            </Col>
+          </Row>
+          <br /><br /><br />
+          <Row className="image-sec">
+            
+            <Col className="abs-col1" xs={12} md={6} lg={7}>
+              The mission's failure had disastrous consequences for the Land of
+              Fire, causing many in Konoha, including the teammates he saved, to
+              vilify him for abandoning his duties. Disgraced, Sakumo committed
+              suicide. Seeing what his father went through and determined not to
+              make the same mistakes, Kakashi decided that following the Shinobi
+              Rules must always take priority.
+            </Col>
+            <Col className="abs-col3" xs={12} md={6} lg={5}>
+              <img src="https://images.unsplash.com/photo-1476673160081-cf065607f449?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80" />
             </Col>
           </Row>
         </Container>
