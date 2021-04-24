@@ -94,6 +94,7 @@
     font-size: 14px;
     font-weight: bold;
     cursor: pointer;
+    text-align: left;
     transition: 0.4s ease-in-out;
 }
 .cardrt .infou .bytu:hover{
