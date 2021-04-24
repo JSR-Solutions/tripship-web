@@ -3,12 +3,15 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 //Local imports
 import Home from "./Core/Home";
+import Header from './Components/Header'
+import Footer from './Components/Footer'
 import Aboutus from "./Core/Aboutus";
 import ContactUs from "./Core/ContactUs";
 import AdminLogin from "./Admin/AdminLogin";
 
 import AdminRoute from "./Admin/AdminRoute";
 import AdminDashboard from "./Admin/AdminDashboard";
+
 
 function App() {
   return (
