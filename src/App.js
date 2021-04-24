@@ -3,14 +3,16 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 //Local imports
 import Home from "./Core/Home";
-import Header from './Components/Header'
-import Footer from './Components/Footer'
 import Aboutus from "./Core/Aboutus";
 import ContactUs from "./Core/ContactUs";
 import AdminLogin from "./Admin/AdminLogin";
 
 import AdminRoute from "./Admin/AdminRoute";
 import AdminDashboard from "./Admin/AdminDashboard";
+import AllPackages from "./Admin/AllPackages";
+import AddPackage from "./Admin/AddPackage";
+import CallbackRequests from "./Admin/CallbackRequests";
+import CustomPackageRequests from "./Admin/CustomPackageRequests";
 
 
 function App() {
@@ -26,6 +28,26 @@ function App() {
             path="/admin/dashboard"
             exact
             component={AdminDashboard}
+          />
+          <AdminRoute
+            path="/admin/allpackages"
+            exact
+            component={AllPackages}
+          />
+          <AdminRoute
+            path="/admin/addpackage"
+            exact
+            component={AddPackage}
+          />
+          <AdminRoute
+            path="/admin/callback"
+            exact
+            component={CallbackRequests}
+          />
+          <AdminRoute
+            path="/admin/customrequests"
+            exact
+            component={CustomPackageRequests}
           />
         </Switch>
       </Router>
