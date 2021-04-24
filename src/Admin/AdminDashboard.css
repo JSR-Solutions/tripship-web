@@ -3,5 +3,31 @@
 }
 
 .admin-dashboard-row {
-    margin: 96px 24px;
+    margin: 96px 24px !important;
+}
+
+.admin-dashboard-content-div {
+    margin: 40px 120px;
+    text-align: left !important;
+}
+
+.form-admin-title {
+    margin-bottom: 16px;
+}
+
+.admin-dashboard-form-button {
+    margin-left: 24px;
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+    transition: 0.25s ease-in-out;
+}
+
+.admin-dashboard-form-button:hover {
+    background-color: transparent !important;
+    color: var(--primary) !important;
+}
+
+.admin-dashboard-form hr {
+    height: 1px;
+    width: 90%;
 }
