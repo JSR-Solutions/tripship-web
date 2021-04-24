@@ -6,6 +6,7 @@ import Home from "./Core/Home";
 import Aboutus from "./Core/Aboutus";
 import ContactUs from "./Core/ContactUs";
 import AdminLogin from "./Admin/AdminLogin";
+import CustomPackage from "./Core/CustomPackage"
 
 import AdminRoute from "./Admin/AdminRoute";
 import AdminDashboard from "./Admin/AdminDashboard";
@@ -23,6 +24,7 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/aboutus" exact component={Aboutus} />
           <Route path="/contact-us" exact component={ContactUs} />
+          <Route path="/custom-package" exact component={CustomPackage}/>
           <Route path="/admin/login" exact component={AdminLogin} />
           <AdminRoute
             path="/admin/dashboard"
