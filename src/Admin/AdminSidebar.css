@@ -39,7 +39,7 @@
 
 /* Morph shape necessary with bubble or elastic */
 .bm-morph-shape {
-    fill: #373a47;
+    fill: var(--primary);
 }
 
 /* Wrapper for item list */
