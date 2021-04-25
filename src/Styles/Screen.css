@@ -4,15 +4,8 @@
     width: 100%;
     height: 100vh;
     font-family: 'agency fb';
-    background: url('../Assets/mountains.png') no-repeat;
-    background-position: 50%;
-    background-size: 30%;
     overflow: hidden;
   }
-  
-  /* ul {
-    list-style: none;
-  } */
   
   .nav {
     width: 300px;
@@ -34,12 +27,12 @@
   .logo h1 {
     font-weight: 300;
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 2;
   }
   
   .logo span {
-    font-size: 60px;
+    font-size: 45px;
     line-height: 1;
   }
   
@@ -117,8 +110,8 @@
     padding-bottom: 5px;
   }
   
-  .fa-play {
-    color: #fff;
+  .fa-circle {
+    color: #222;
     font-size: 30px;
     margin-right: 20px;
     cursor: pointer;
@@ -129,6 +122,9 @@
     height: 608px;
     position: absolute;
     top: 50%;
+    background: url('../Assets/mountains.png') no-repeat;
+    background-position: 50%;
+    background-size: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
@@ -261,12 +257,12 @@
   
   .overlay h1 {
     font-size: 100px;
-    letter-spacing: 20px;
+    letter-spacing: 10px;
   }
   
   .overlay span {
     font-size: 30px;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
   }
   
   
