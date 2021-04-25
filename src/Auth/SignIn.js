@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import { Button, Card, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+import firebase from "firebase";
+import { toast, ToastContainer } from "react-toastify";
 
 import "./Auth.css";
 
 function SignIn() {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+  const [redirectHome, setRedirectHome] = useState(false);
+  const [redirectRegistration, setRedirectRegistration] = useState(false);
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -15,8 +21,39 @@ function SignIn() {
     });
   };
 
+  function handleSignIn(event) {
+    event.preventDefault();
+    auth
+      .signInWithEmailAndPassword(credentials.email, credentials.password)
+      .then((userCredentials) => {
+        const user = userCredentials.user;
+        if (user.emailVerified) {
+          db.collection("Users")
+            .doc(user.uid)
+            .get()
+            .then((snapshot) => {
+              if (snapshot.exists) {
+                console.log("Exists");
+                setRedirectHome(true);
+              } else {
+                console.log("Does not exists");
+                setRedirectRegistration(true);
+              }
+            });
+        } else {
+          toast.error("Please verify your email.");
+        }
+      })
+      .catch((error) => {
+        toast.error("ERROR : " + error.message);
+      });
+  }
+
   return (
     <div className="auth-main-div">
+      <ToastContainer />
+      {redirectRegistration ? <Redirect to="/register" /> : null}
+      {redirectHome ? <Redirect to="/" /> : null}
       <Card className="auth-card">
         <Card.Body>
           <h4>Sign In</h4>
@@ -41,7 +78,7 @@ function SignIn() {
                 onChange={handleChange}
               />
             </Form.Group>
-            <Button className="auth-button">Sign In</Button>
+            <Button onClick={handleSignIn} className="auth-button">Sign In</Button>
           </Form>
           <div className="auth-text">
             New here? <Link to="/signup">Sign Up</Link>

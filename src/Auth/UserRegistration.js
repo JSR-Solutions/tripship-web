@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Card, Form } from "react-bootstrap";
+import firebase from "firebase";
+import { Redirect } from "react-router-dom";
 
 import "./Auth.css";
 
@@ -10,6 +12,13 @@ function UserRegistration() {
     phone: "",
     address: "",
   });
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+  const [registered, setRegistered] = useState(false);
+
+  useEffect(() => {
+    getUserEmail();
+  }, []);
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -19,8 +28,37 @@ function UserRegistration() {
     });
   };
 
+  const getUserEmail = () => {
+    auth.onAuthStateChanged((userCredentials) => {
+      const email = userCredentials.email;
+      setUserData((prev) => {
+        return { ...prev, email: email };
+      });
+    });
+  };
+
+  const registerUser = (event) => {
+    event.preventDefault();
+    auth.onAuthStateChanged((userCredentials) => {
+      const uid = userCredentials.uid;
+
+      db.collection("Users")
+        .doc(uid)
+        .set({
+          name: userData.name,
+          phone: userData.phone,
+          address: userData.address,
+          email: userData.email,
+        })
+        .then(() => {
+          setRegistered(true);
+        });
+    });
+  };
+
   return (
     <div className="auth-main-div">
+      {registered && <Redirect to="/" />}
       <Card className="auth-card">
         <Card.Body>
           <h4>Register</h4>
@@ -65,7 +103,9 @@ function UserRegistration() {
                 onChange={handleChange}
               />
             </Form.Group>
-            <Button className="auth-button">Register</Button>
+            <Button onClick={registerUser} className="auth-button">
+              Register
+            </Button>
           </Form>
         </Card.Body>
       </Card>
