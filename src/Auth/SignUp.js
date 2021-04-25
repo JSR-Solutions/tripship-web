@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { Button, Card, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+import firebase from "firebase";
+import { toast, ToastContainer } from "react-toastify";
 
 import "./Auth.css";
 
 function SignUp() {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
+  const auth = firebase.auth();
+  const [redirect, setRedirect] = useState(false);
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -14,8 +18,34 @@ function SignUp() {
       return { ...prev, [name]: value };
     });
   };
+
+  function handleSignUp(event) {
+    event.preventDefault();
+    auth
+      .createUserWithEmailAndPassword(credentials.email, credentials.password)
+      .then((userCredentials) => {
+        const user = userCredentials.user;
+        user
+          .sendEmailVerification()
+          .then(() => {
+            toast.success("Please check your email inbox.");
+            setCredentials({ email: "", password: "" });
+          })
+          .catch((e) => {
+            toast.error("ERROR : " + e.message);
+          });
+        auth.signOut();
+        setRedirect(true);
+      })
+      .catch((err) => {
+        toast.error("ERROR : " + err.message);
+      });
+  }
+
   return (
     <div className="auth-main-div">
+      <ToastContainer />
+      {redirect && <Redirect to="/signin" />}
       <Card className="auth-card">
         <Card.Body>
           <h4>Sign Up</h4>
@@ -40,7 +70,7 @@ function SignUp() {
                 onChange={handleChange}
               />
             </Form.Group>
-            <Button className="auth-button">Sign Up</Button>
+            <Button onClick={handleSignUp} className="auth-button">Sign Up</Button>
           </Form>
           <div className="auth-text">
             Already Registered? <Link to="/signin">Sign In</Link>
