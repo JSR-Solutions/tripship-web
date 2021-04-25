@@ -14,12 +14,12 @@ const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
     items: 4,
-    slidesToSlide: 3, // optional, default to 1.
+    slidesToSlide: 2, // optional, default to 1.
   },
   tablet: {
     breakpoint: { max: 1200, min: 700 },
     items: 3,
-    slidesToSlide: 2, // optional, default to 1.
+    slidesToSlide: 1, // optional, default to 1.
   },
   mobile: {
     breakpoint: { max: 965, min: 643 },
@@ -71,7 +71,7 @@ function CardCarousel(props) {
         infinite={true}
         autoPlaySpeed={1000}
         keyBoardControl={true}
-        customTransition="all .5"
+        customTransition=""
         transitionDuration={500}
         containerClass="carousel-container"
         removeArrowOnDeviceType={["tablet", "mobile"]}
