@@ -71,12 +71,12 @@ function AdminDashboard() {
           <Col lg={4}>
             <Card>
               <Card.Body>
-                <h4>All Packages</h4>
+                <h4>All Users</h4>
               </Card.Body>
               <Card.Footer>
-                <Link to="/">
+                <Link to="/admin/users">
                   {" "}
-                  <Button className="admin-button">View All Packages</Button>
+                  <Button className="admin-button">View All Users</Button>
                 </Link>
               </Card.Footer>
             </Card>

@@ -18,6 +18,7 @@ import EditPackage from "./Admin/EditPackage";
 import SignIn from "./Auth/SignIn";
 import SignUp from "./Auth/SignUp";
 import UserRegistration from "./Auth/UserRegistration";
+import AllUsers from "./Admin/AllUsers";
 
 function App() {
   return (
@@ -54,6 +55,7 @@ function App() {
             exact
             component={EditPackage}
           />
+          <AdminRoute path="/admin/users" exact component={AllUsers} />
         </Switch>
       </Router>
     </div>
