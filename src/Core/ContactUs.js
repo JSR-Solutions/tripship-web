@@ -14,27 +14,27 @@ const ValidateForm=empData=>{
   const errors = {};
 
   if(!empData.name){
-    errors.name = 'Please Enter Your Name';
+    errors.name = '*Please Enter Your Name';
   }
   else if(empData.name.length > 20){
     errors.name = 'Name Should Not Exeed 20 Characters'
   }
 
   if(!empData.phNo){
-    errors.phNo = 'Please Enter Your Phone number';
+    errors.phNo = '*Please Enter Your Phone number';
   }
   else if(!/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(empData.phNo)){
     errors.phNo = 'Phone Number you entered is invalid'
   }
 
   if(!empData.email){
-    errors.email = 'Please Enter Your Email Adress';
+    errors.email = '*Please Enter Your Email Adress';
   }
   else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(empData.email)) {
     errors.email = 'Email address you entered in invalid';
   }
   if(!empData.message){
-    errors.message = "Please Enter your Message"
+    errors.message = "*Please Enter your Message"
   }
   return errors;
 }
@@ -93,7 +93,7 @@ function Contact() {
                   onChange = {formik.handleChange}
                   value = {formik.values.name}
                 ></Form.Control>
-                {formik.touched.name && formik.errors.name ? <p className = "errt" >{formik.errors.name}</p> : null}
+                {formik.touched.name && formik.errors.name ? <p className = "h_error" >{formik.errors.name}</p> : null}
                 <Form.Control
                   className="h_form_input"
                   type="text"
@@ -103,7 +103,7 @@ function Contact() {
                   onChange = {formik.handleChange}
                   value = {formik.values.phNo}
                 ></Form.Control>
-                {formik.touched.phNo && formik.errors.phNo ? <p className = "errt" >{formik.errors.phNo}</p> : null}
+                {formik.touched.phNo && formik.errors.phNo ? <p className = "h_error" >{formik.errors.phNo}</p> : null}
                 <Form.Control
                   className="h_form_input"
                   type="email"
@@ -113,7 +113,7 @@ function Contact() {
                   onChange = {formik.handleChange}
                   value = {formik.values.email}
                 ></Form.Control>
-                {formik.touched.email && formik.errors.email ? <p className = "errt" >{formik.errors.email}</p> : null}
+                {formik.touched.email && formik.errors.email ? <p className = "h_error" >{formik.errors.email}</p> : null}
                 <Form.Control
                   className="h_form_input"
                   as="textarea"
@@ -124,7 +124,7 @@ function Contact() {
                   onChange = {formik.handleChange}
                   value = {formik.values.message}
                 ></Form.Control>
-                {formik.touched.message && formik.errors.message ? <p className = "errt" >{formik.errors.message}</p> : null}
+                {formik.touched.message && formik.errors.message ? <p className = "h_error" >{formik.errors.message}</p> : null}
                 <Button className="h_form_button" onClick = {formik.isValid? addEnquiry: null}>Send</Button>
               </Form>
             </div>

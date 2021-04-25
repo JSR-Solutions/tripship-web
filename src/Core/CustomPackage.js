@@ -5,137 +5,88 @@ import "../Styles/CustomPackage.css";
 import { Row, Col, Form, Button } from "react-bootstrap";
 import firebase from "firebase";
 import { useState } from "react";
+import {useFormik} from 'formik'
+import { ToastContainer, toast } from "react-toastify";
+const ValidateForm=empData=>{
+  const errors = {};
+
+  if(!empData.name){
+    errors.name = '*Please Enter Your Name';
+  }
+  else if(empData.name.length > 20){
+    errors.name = 'Name Should Not Exeed 20 Characters'
+  }
+
+  if(!empData.phoneNo){
+    errors.phoneNo = '*Please Enter Your Phone number';
+  }
+  else if(!/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(empData.phoneNo)){
+    errors.phoneNo = 'Phone Number you entered is invalid'
+  }
+
+  if(!empData.email){
+    errors.email = '*Please Enter Your Email Adress';
+  }
+  else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(empData.email)) {
+    errors.email = 'Email address you entered in invalid';
+  }
+  if(!empData.destination){
+    errors.destination = "*Please Enter your Destination"
+  }
+  if(!empData.noOfPeople){
+    errors.noOfPeople = "*Please Enter the no. of people"
+  }
+  if(!empData.budget){
+    errors.budget = "*Please Enter your budget"
+  }
+  if(!empData.requirements){
+    errors.requirements = "*Please Enter the no. of people"
+  }
+  
+  
+  return errors;
+}
 
 function CustomPackage() {
-  const [cust, setCust] = useState({
-    name: "",
-    phoneNo: "",
-    email: "",
-    destination: "",
-    noOfPeople: "",
-    budget: "",
-    requirements: "",
-  });
-  const [name, setName] = useState("");
-  const [phoneNo, setPhoneNo] = useState("");
-  const [email, setEmail] = useState("");
-  const [destination, setDestination] = useState("");
-  const [noOfPeople, setNoOfPeople] = useState("");
-  const [budget, setBudget] = useState("");
-  const [requirements, setRequirements] = useState("");
-  const [ErrorName, setErrorName] = useState("");
-  const [ErrorPhoneNo, setErrorPhoneNo] = useState("");
-  const [ErrorEmail, setErrorEmail] = useState("");
-  const [ErrorDestination, setErrorDestination] = useState("");
-  const [ErrorNoOfPeople, setErrorNoOfPeople] = useState("");
-  const [Errorbudget, setErrorBudget] = useState("");
-  const [Errorrequirements, setErrorRequirements] = useState("");
+  const formik = useFormik({
+    initialValues: {
+      name: '',
+      phoneNo : '',
+      email: '',
+      destination: "",
+      noOfPeople: "",
+      budget: "",
+      requirements: "",
+    },
+    validate: ValidateForm,
+    onSubmit: (values,{resetForm}) => {
+      resetForm()
+    },
+ 
+   });
+  
   const db = firebase.firestore();
 
-  function validate(event) {
-    setErrorName("");
-    setErrorNoOfPeople("");
-    setErrorRequirements("");
-    setErrorPhoneNo("");
-    setErrorBudget("");
-    setErrorEmail("");
-    setErrorDestination("");
-
-    if (!name) {
-      setErrorName("*Name cannot be empty");
-      return false;
-    } else if (phoneNo.length !== 10) {
-      setErrorPhoneNo("*Phone no. should be of 10 digits ");
-      return false;
-    } else if (!email.includes("@")) {
-      setErrorEmail("*Email must contain @");
-      return false;
-    } else if (!destination) {
-      setErrorDestination("*Destination cannot be empty");
-      return false;
-    } else {
-      return true;
-    }
-  }
-
-  function handleChange(event) {
-    const custom = cust;
-    const { name, value } = event.target;
-    if (name === "name") {
-      setName(value);
-      custom.name = value;
-    }
-    if (name === "phoneNo") {
-      setPhoneNo(value);
-      custom.phoneNo = value;
-    }
-    if (name === "budget") {
-      setBudget(value);
-      custom.budget = value;
-    }
-    if (name === "destination") {
-      setDestination(value);
-      custom.destination = value;
-    }
-    if (name === "email") {
-      setEmail(value);
-      custom.email = value;
-    }
-    if (name === "noOfPeople") {
-      setNoOfPeople(value);
-      custom.noOfPeople = value;
-    }
-    if (name === "requirements") {
-      setRequirements(value);
-      custom.requirements = value;
-    }
-    setCust(custom);
-  }
-
+  
   function handleSubmit(event) {
-    const isValid = validate();
-    if (isValid) {
+    event.preventDefault();
       db.collection("CustomPackage")
-        .add(cust)
+        .add(formik.values)
         .then((docRef) => {
+           toast.success("Your enquiry has reached us. We will get in touch with you shortly.");
+            formik.handleSubmit()
           db.collection("CustomPackage")
             .doc(docRef.id)
             .update({ id: docRef.id })
-            .then(() => {
-              console.log(cust);
-              setCust({
-                name: "",
-                phoneNo: "",
-                email: "",
-                destination: "",
-                noOfPeople: "",
-                budget: "",
-                requirements: "",
-              });
-              setName("");
-              setNoOfPeople("");
-              setRequirements("");
-              setPhoneNo("");
-              setBudget("");
-              setEmail("");
-              setDestination("");
-              setErrorName("");
-              setErrorNoOfPeople("");
-              setErrorRequirements("");
-              setErrorPhoneNo("");
-              setErrorBudget("");
-              setErrorEmail("");
-              setErrorDestination("");
-            });
+            
         });
-    } else if (!isValid) {
-      console.log(ErrorEmail, ErrorName, ErrorPhoneNo);
-    }
+    
   }
 
   return (
     <div>
       <Header />
+      <ToastContainer />
       <div className="h_custBack">
         <h1>Custom Package</h1>
 
@@ -151,81 +102,91 @@ function CustomPackage() {
                 <Form>
                   <Form.Group controlId="formname">
                     <Form.Control
-                      onChange={handleChange}
+                      onChange={formik.handleChange}
+                      onBlur = {formik.handleBlur}
                       className="h_form_input"
                       type="text"
                       name="name"
-                      value={name}
+                      value={formik.values.name}
                       placeholder="Name"
                     />
                   </Form.Group>
-                  <div className="h_error">{ErrorName}</div>
+                  {formik.touched.name && formik.errors.name ? <p className = "h_error" >{formik.errors.name}</p> : null}
                   <Form.Group controlId="formphone_no">
                     <Form.Control
-                      onChange={handleChange}
+                      onChange={formik.handleChange}
+                      onBlur = {formik.handleBlur}
                       className="h_form_input"
                       type="number"
                       name="phoneNo"
-                      value={phoneNo}
+                      value={formik.values.phoneNo}
                       placeholder="Phone No"
                     />
                   </Form.Group>
-                  <div className="h_error">{ErrorPhoneNo}</div>
+                  {formik.touched.phoneNo && formik.errors.phoneNo ? <p className = "h_error" >{formik.errors.phoneNo}</p> : null}
                   <Form.Group controlId="formemail">
                     <Form.Control
-                      onChange={handleChange}
+                      onChange={formik.handleChange}
+                      onBlur = {formik.handleBlur}
                       className="h_form_input"
                       type="text"
                       name="email"
-                      value={email}
+                      value={formik.values.email}
                       placeholder="Email"
                     />
                   </Form.Group>
-                  <div className="h_error">{ErrorEmail}</div>
+                  {formik.touched.email && formik.errors.email ? <p className = "h_error" >{formik.errors.email}</p> : null}
                   <Form.Group controlId="formdestination">
                     <Form.Control
-                      onChange={handleChange}
+                      onChange={formik.handleChange}
+                      onBlur = {formik.handleBlur}
                       className="h_form_input"
                       type="text"
                       name="destination"
-                      value={destination}
+                      value={formik.values.destination}
                       placeholder="Destination"
                     />
                   </Form.Group>
-                  <div className="h_error">{ErrorDestination}</div>
+                  {formik.touched.destination && formik.errors.destination ? <p className = "h_error" >{formik.errors.destination}</p> : null}
                   <Form.Group controlId="formNoofPeople">
                     <Form.Control
-                      onChange={handleChange}
+                      onChange={formik.handleChange}
+                      onBlur = {formik.handleBlur}
                       className="h_form_input"
                       type="text"
                       name="noOfPeople"
-                      value={noOfPeople}
+                      value={formik.values.noOfPeople}
                       placeholder="No of People"
                     />
                   </Form.Group>
+                  {formik.touched.noOfPeople && formik.errors.noOfPeople ? <p className = "h_error" >{formik.errors.noOfPeople}</p> : null}
                   <Form.Group controlId="formbudget">
                     <Form.Control
-                      onChange={handleChange}
+                      onChange={formik.handleChange}
+                      onBlur = {formik.handleBlur}
                       className="h_form_input"
                       type="text"
                       name="budget"
-                      value={budget}
+                      value={formik.values.budget}
                       placeholder="Budget"
                     />
                   </Form.Group>
+                  {formik.touched.budget && formik.errors.budget ? <p className = "h_error" >{formik.errors.budget}</p> : null}
                   <Form.Group controlId="formrequirements">
                     <Form.Control
-                      onChange={handleChange}
+                      onChange={formik.handleChange}
+                      onBlur = {formik.handleBlur}
                       className="h_form_input"
                       as="textarea"
                       rows={4}
                       name="requirements"
-                      value={requirements}
+                      value={formik.values.requirements}
                       placeholder="Requirements"
                     />
                   </Form.Group>
+                  {formik.touched.requirements && formik.errors.requirements ? <p className = "h_error" >{formik.errors.requirements}</p> : null}
                   <br></br>
-                  <Button className="h_form_button" onClick={handleSubmit}>
+                  <Button className="h_form_button" onClick={formik.isValid ? handleSubmit : null}>
                     Submit
                   </Button>
                 </Form>
