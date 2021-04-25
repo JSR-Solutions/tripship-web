@@ -1,219 +1,284 @@
-import React, { useEffect } from "react";
+import React, { useRef, useEffect } from "react";
+import "../Styles/Screen.css";
 import "../Styles/Aboutus.css";
-import Headings from "../Core/Headings";
-import { Row, Col, Container } from "react-bootstrap";
-import $ from "jquery";
+import { TweenMax, Expo } from "gsap";
 import exp from "../Assets/experience.png";
 import staff from "../Assets/employees.png";
+import Headings from "./Headings";
 import price from "../Assets/dollar.png";
 import placeholder from "../Assets/placeholder.png";
-import Header from "../Components/Header";
-import Footer from "../Components/Footer";
-// import Animation1 from "../Core/Animation1";
-// import { gsap } from "gsap";
-// import { Controller, Scene } from "react-scrollmagic";
-// import { TimelineMax, Power4 } from "gsap";
+import { Row, Col, Container } from "react-bootstrap";
 
-const Aboutus = () => {
+const Screen = () => {
+  let overlay = useRef(null);
+  let overlay_h1 = useRef(null);
+  let overlay_span = useRef(null);
+  let ellipse_container = useRef(null);
+  let yellow = useRef(null);
+  let circle1 = useRef(null);
+  let circle2 = useRef(null);
+  let logo = useRef(null);
+  let menu_links_ul_li = useRef(null);
+  let scrolldown = useRef(null);
+  let title = useRef(null);
+  let text = useRef(null);
+  let text_p = useRef(null);
+  let watchnow = useRef(null);
+  let section_one = useRef(null);
+  let section_one_content = useRef(null);
+  let image_one = useRef(null);
+  const tl = useRef();
+
+  // let t1 = gsap.timeline({
+  //   scrollTrigger:{
+  //     trigger: section_one.current,
+  //     start: "center bottom"
+  //   }
+  // });
+
+  // t1.from(image_one.current, {x:20 , opacity:0, duration : 1.5})
+  //  .from(section_one_content.current, {y:300 , opacity:0, duration:1}, "-=1")
+
   useEffect(() => {
-    $(document).ready(function () {
-      $(this).scrollTop(0);
+    TweenMax.to(overlay_h1.current, 2, {
+      opacity: 0,
+      y: -60,
+      ease: Expo.easeInOut,
+    });
+
+    TweenMax.to(overlay_span.current, 2, {
+      delay: 0.3,
+      opacity: 0,
+      y: -60,
+      ease: Expo.easeInOut,
+    });
+
+    TweenMax.to(overlay.current, 2, {
+      delay: 1,
+      top: "-100%",
+      ease: Expo.easeInOut,
+    });
+
+    TweenMax.from(ellipse_container.current, 1, {
+      delay: 2,
+      opacity: 0,
+      ease: Expo.easeInOut,
+    });
+
+    TweenMax.from(yellow.current, 1, {
+      delay: 3.5,
+      opacity: 0,
+      ease: Expo.easeInOut,
+    });
+
+    TweenMax.from(circle1.current, 1, {
+      delay: 2.4,
+      opacity: 0,
+      ease: Expo.easeInOut,
+    });
+
+    TweenMax.from(circle2.current, 1, {
+      delay: 2.6,
+      opacity: 0,
+      ease: Expo.easeInOut,
+    });
+
+    TweenMax.from(logo.current, 1, {
+      delay: 3,
+      opacity: 0,
+      y: -100,
+      ease: Expo.easeInOut,
+    });
+
+    TweenMax.staggerFrom(
+      menu_links_ul_li.current,
+      1,
+      {
+        delay: 3.2,
+        opacity: 0,
+        x: -100,
+        ease: Expo.easeInOut,
+      },
+      0.08
+    );
+
+    TweenMax.from(scrolldown.current, 1, {
+      delay: 3.4,
+      opacity: 0,
+      y: 100,
+      ease: Expo.easeInOut,
+    });
+
+    TweenMax.from(title.current, 1, {
+      delay: 3,
+      opacity: 0,
+      x: 200,
+      ease: Expo.easeInOut,
+    });
+
+    TweenMax.from(text.current, 1, {
+      delay: 3,
+      opacity: 0,
+      x: 200,
+      ease: Expo.easeInOut,
+    });
+
+    TweenMax.from(text_p.current, 1, {
+      delay: 3.2,
+      opacity: 0,
+      x: 200,
+      ease: Expo.easeInOut,
+    });
+
+    TweenMax.from(watchnow.current, 1, {
+      delay: 3.4,
+      opacity: 0,
+      x: 200,
+      ease: Expo.easeInOut,
     });
   }, []);
 
   return (
-    <div>
-      <Header />
-      <div className="aboutus-god">
-        <div class="main-heading">
-          <h1>About Us</h1>
-        </div>
-        <div className="aboutus-sec1">
-          <Headings text="About TripShrip"></Headings>
-          <br></br>
-          <Container>
-            <Row className="image-sec">
-              <Col className="abs-col4" xs={12} md={6} lg={5}>
-                <img src="https://images.unsplash.com/photo-1610446591310-33d012d5682d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" />
-              </Col>
-              <Col className="abs-col2" xs={12} md={6} lg={7}>
-                Because his mother died when he was very young, Kakashi was
-                raised during his early years by his father, Sakumo. Sakumo was
-                famed throughout the shinobi world, having saved Konoha on at
-                least one occasion; Kakashi in particular revered his father.
-                During one of Sakumo's missions - after Kakashi was enrolled in
-                Konoha's Ninja Academy - Sakumo made the decision to save the
-                lives of his teammates rather than complete the assignment.
-              </Col>
-            </Row>
-            <br />
-            <br />
-            <br />
-            <Row className="image-sec">
-              <Col className="abs-col1" xs={12} md={6} lg={7}>
-                The mission's failure had disastrous consequences for the Land
-                of Fire, causing many in Konoha, including the teammates he
-                saved, to vilify him for abandoning his duties. Disgraced,
-                Sakumo committed suicide. Seeing what his father went through
-                and determined not to make the same mistakes, Kakashi decided
-                that following the Shinobi Rules must always take priority.
-              </Col>
-              <Col className="abs-col3" xs={12} md={6} lg={5}>
-                <img src="https://images.unsplash.com/photo-1476673160081-cf065607f449?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1052&q=80" />
-              </Col>
-            </Row>
-          </Container>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path
-              fill="#e4c435"
-              fill-opacity="1"
-              d="M0,288L1440,96L1440,320L0,320Z"
-            ></path>
-          </svg>
-          <div className="aboutus-sec1a">
-            <Headings text="WHAT WE PROVIDE"></Headings>
-            <div className="maujkaradibete">
-              <div className="ekaurdiv">
-                <br />
-                <div className="services">
-                  <Container>
-                    <Row className="service-row">
-                      <Col xs={12} md={6} lg={3}>
-                        <center>
-                          <img alt="ntohing" src={placeholder} />
-                          <h4>LOCATION</h4>
-                          <p>
-                            Expert local knowledge and regional, on-the-ground
-                            guides so you enjoy the ultimate experience.
-                          </p>
-                        </center>
-                      </Col>
-                      <Col xs={12} md={6} lg={3}>
-                        <center>
-                          <img alt="ntohing" src={exp} />
-                          <h4>EXPERIENCE</h4>
-                          <p>
-                            The experience to help enhance your itinerary - or
-                            tailor-make you an entire journey.
-                          </p>
-                        </center>
-                      </Col>
-                      <Col xs={12} md={6} lg={3}>
-                        <center>
-                          <img alt="ntohing" src={staff} />
-                          <h4>STAFF</h4>
-                          <p>
-                            All the members of our team are passionate about
-                            their work and always ready to help.
-                          </p>
-                        </center>
-                      </Col>
-                      <Col xs={12} md={6} lg={3}>
-                        <center>
-                          <img alt="ntohing" src={price} />
-                          <h4>PRICE</h4>
-                          <p>
-                            Due to direct contracts with all our suppliers, our
-                            prices are always relevant and affordable.
-                          </p>
-                        </center>
-                      </Col>
-                    </Row>
-                  </Container>
-                </div>
-              </div>
-            </div>
+    <div className="cat-main">
+      <div ref={overlay} className="overlay">
+        <h1 ref={overlay_h1}>TRIP</h1>
+        <span ref={overlay_span}>SHRIP</span>
+      </div>
+
+      <div className="wrapper">
+        <div className="nav">
+          <div ref={logo} className="logo">
+            <h1>
+              <span>ABOUT US</span>
+              <br />
+              _____________
+            </h1>
           </div>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path
-              fill="#e4c435"
-              fill-opacity="1"
-              d="M0,96L1440,160L1440,0L0,0Z"
-            ></path>
-          </svg>
-          <div className="aboutus-team">
-            <Headings text="OUR TEAM"></Headings>
-            <Row className="team-cards-aks">
-              <Col>
-                <div class="container-team">
-                  <center>
-                    <div class="post">
-                      <div class="header_post">
-                        <img
-                          src="https://images.unsplash.com/photo-1476817343404-01ccd61218d3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-                          alt=""
-                        />
-                      </div>
 
-                      <div class="body_post">
-                        <div class="post_content">
-                          <h1>
-                            ABS
-                            <br />
-                            XYZZZZ{" "}
-                          </h1>
-                        </div>
-                      </div>
-                    </div>
-                  </center>
-                </div>
-              </Col>
+          <div ref={menu_links_ul_li} className="menu-links">
+            <ul>
+              <li ref={menu_links_ul_li}>|</li>
+              <li ref={menu_links_ul_li}>ABOUT US</li>
+              <li ref={menu_links_ul_li}>|</li>
+            </ul>
+          </div>
 
-              <Col>
-                <div class="container-team">
-                  <center>
-                    <div class="post">
-                      <div class="header_post">
-                        <img
-                          src="https://images.unsplash.com/photo-1476817343404-01ccd61218d3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-                          alt=""
-                        />
-                      </div>
+          <div ref={scrolldown} className="scrolldown">
+            ABOUT US
+          </div>
+        </div>
 
-                      <div class="body_post">
-                        <div class="post_content">
-                          <h1>
-                            ABS
-                            <br />
-                            XYZZZZ{" "}
-                          </h1>
-                        </div>
-                      </div>
-                    </div>
-                  </center>
-                </div>
-              </Col>
+        <div ref={text} className="text">
+          <div ref={title} className="title">
+            about us
+          </div>
+          <p ref={text_p}>
+          “Remember that <br/>happiness is a way of travel,<br/> not a destination.”
+          </p>
+        </div>
 
-              <Col>
-                <div class="container-team">
-                  <center>
-                    <div class="post">
-                      <div class="header_post">
-                        <img
-                          src="https://images.unsplash.com/photo-1476817343404-01ccd61218d3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-                          alt=""
-                        />
-                      </div>
+        <div ref={watchnow} className="watchnow">
+          <i className="fa fa-circle"></i>
+          <a href="#"></a>
+        </div>
 
-                      <div class="body_post">
-                        <div class="post_content">
-                          <h1>
-                            ABS
-                            <br />
-                            XYZZZZ{" "}
-                          </h1>
-                        </div>
-                      </div>
-                    </div>
-                  </center>
-                </div>
-              </Col>
-            </Row>
+        <div ref={ellipse_container} className="ellipse-container">
+          <div className="ellipse thin"></div>
+          <div className="ellipse thick"></div>
+          <div className="ellipse yellow"></div>
+          <div ref={circle1} className="circle1"></div>
+          <div ref={circle2} className="circle2"></div>
+        </div>
+      </div>
+
+      <div ref={section_one} className="section-one">
+        <div ref={section_one_content} className="sec-one-content">
+          <h2>KYA HAAL HAIN?</h2>
+          <p>
+            On accompanies his father, Lord Eddard Stark,
+            <br /> his brothers Robb and Bran, his father's ward <br />
+            Theon Greyjoy, and others from Winterfell to
+            <br /> the execution of Gared, a deserter way back
+            <br /> to Winterfell, Jon and Robb race ahead and <br />
+            find a litter of direwolf pups.
+          </p>
+          <div className="ellipse-container-2">
+            <div className="ellipse2 thin2"></div>
+            <div className="ellipse2 thick2"></div>
+            <div className="ellipse2 yellow2"></div>
           </div>
         </div>
       </div>
-      <Footer />
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          fill="#e4c435"
+          fill-opacity="1"
+          d="M0,288L1440,96L1440,320L0,320Z"
+        ></path>
+      </svg>
+      <div className="aboutus-sec1a">
+        <Headings text="WHAT WE PROVIDE"></Headings>
+        <div className="maujkaradibete">
+          <div className="ekaurdiv">
+            <br />
+            <div className="services">
+              <Container>
+                <Row className="service-row">
+                  <Col xs={12} md={6} lg={3}>
+                    <center>
+                      <img alt="ntohing" src={placeholder} />
+                      <h4>LOCATION</h4>
+                      <p>
+                        Expert local knowledge and regional, on-the-ground
+                        guides so you enjoy the ultimate experience.
+                      </p>
+                    </center>
+                  </Col>
+                  <Col xs={12} md={6} lg={3}>
+                    <center>
+                      <img alt="ntohing" src={exp} />
+                      <h4>EXPERIENCE</h4>
+                      <p>
+                        The experience to help enhance your itinerary - or
+                        tailor-make you an entire journey.
+                      </p>
+                    </center>
+                  </Col>
+                  <Col xs={12} md={6} lg={3}>
+                    <center>
+                      <img alt="ntohing" src={staff} />
+                      <h4>STAFF</h4>
+                      <p>
+                        All the members of our team are passionate about their
+                        work and always ready to help.
+                      </p>
+                    </center>
+                  </Col>
+                  <Col xs={12} md={6} lg={3}>
+                    <center>
+                      <img alt="ntohing" src={price} />
+                      <h4>PRICE</h4>
+                      <p>
+                        Due to direct contracts with all our suppliers, our
+                        prices are always relevant and affordable.
+                      </p>
+                    </center>
+                  </Col>
+                </Row>
+              </Container>
+            </div>
+          </div>
+        </div>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          fill="#e4c435"
+          fill-opacity="1"
+          d="M0,96L1440,160L1440,0L0,0Z"
+        ></path>
+      </svg>
     </div>
   );
 };
-export default Aboutus;
+
+export default Screen;
