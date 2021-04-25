@@ -5,8 +5,10 @@ import { Button, Col, Form, Row } from "react-bootstrap";
 import { AiFillLock } from "react-icons/ai";
 import { reactLocalStorage } from "reactjs-localstorage";
 import { Redirect } from "react-router";
+import {toast, ToastContainer} from "react-toastify"
 
 import "./AdminLogin.css";
+
 
 function AdminLogin() {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
@@ -28,6 +30,7 @@ function AdminLogin() {
       .signInWithEmailAndPassword(credentials.email, credentials.password)
       .then((userCredentials) => {
         const user = userCredentials.user;
+        
         if (user) {
           const uid = user.uid;
           db.collection("Admin")
@@ -50,13 +53,18 @@ function AdminLogin() {
               }
             });
         }
+      })
+      .catch((error) =>{
+             toast.error(error.message)
       });
   };
 
   return (
     <div>
       {isAdmin ? <Redirect to="/admin/dashboard" /> : null}
+      <ToastContainer />
       <Row>
+      
         <Col lg={8} className="admin-login-bg"></Col>
         <Col lg={4} className="admin-login-side">
           <div className="admin-login-main-div">
