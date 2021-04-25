@@ -5,6 +5,7 @@ import firebase from "firebase";
 
 import "./AdminDashboard.css";
 import AdminSidebar from "./AdminSidebar";
+import { toast, ToastContainer } from "react-toastify"
 
 function AddPackage() {
   const [overviews, setOverviews] = useState([""]);
@@ -241,7 +242,7 @@ function AddPackage() {
   const handleMapChange = (e) => {
     e.preventDefault();
     const { value } = e.target;
-    setMap(value.concat("&output=embed"));
+    setMap(value);
   };
 
   //Pricing dynamic part
@@ -277,7 +278,12 @@ function AddPackage() {
   //Add Package Function
   const addPackage = (e) => {
     e.preventDefault();
-    const uploadTask = storage
+    if (name == "" || packageImage == null || pricing[0].type == "" || pricing[0].cost == 0 || duration == "" || map == "" || exclusions[0] == "" || dates[0] == "" || thingsNeeded[0] == "" || terms[0] == "" || inclusions[0] == "" || detailedItinerary[0].day == "" || detailedItinerary[0].desc == "" || detailedItinerary[0].title == ""){
+      toast.error("Some fields are empty ")
+
+    }
+    else{
+      const uploadTask = storage
       .ref(packageType + "/" + packageImage.name)
       .put(packageImage);
 
@@ -302,7 +308,7 @@ function AddPackage() {
                 overviews: overviews,
                 inclusions: inclusions,
                 exclusions: exclusions,
-                map: map,
+                map: map.concat("&output=embed"),
                 terms: terms,
                 name: name,
                 dates: dates,
@@ -324,12 +330,15 @@ function AddPackage() {
           });
       }
     );
-  };
+
+    }
+      };
 
   return (
     <div>
       {isAdded ? <Redirect to="/admin/allpackages" /> : null}
       <AdminSidebar />
+      <ToastContainer />
       <div className="admin-dashboard-main-div">
         <h2>Hello, Admin! Welcome to the Add Packages section.</h2>
         <p>
@@ -352,6 +361,7 @@ function AddPackage() {
                     onChange={(event) => {
                       handleChange(event);
                     }}
+                    required
                   />
                 </Form.Group>
               </Col>
@@ -362,6 +372,7 @@ function AddPackage() {
               <Col lg={10}>
                 <Form.Group className="admin-dashboard-form-group">
                   <Form.Control
+                    required
                     onChange={handleTypeChange}
                     className="add-package-form-input"
                     as="select"
@@ -382,6 +393,7 @@ function AddPackage() {
               <Col lg={10}>
                 <Form.Group className="admin-dashboard-form-group">
                   <Form.Control
+                    required
                     className="admin-dashboard-form-input"
                     type="text"
                     required
@@ -405,6 +417,7 @@ function AddPackage() {
                     <Col lg={10}>
                       <Form.Group>
                         <Form.Control
+                          required
                           className="admin-dashboard-form-input"
                           as="textarea"
                           required
@@ -447,6 +460,7 @@ function AddPackage() {
                     <Col lg={10}>
                       <Form.Group>
                         <Form.Control
+                          required
                           className="admin-dashboard-form-input"
                           type="text"
                           name="day"
@@ -459,6 +473,7 @@ function AddPackage() {
                       </Form.Group>
                       <Form.Group>
                         <Form.Control
+                          required
                           className="admin-dashboard-form-input"
                           type="text"
                           name="title"
@@ -471,6 +486,7 @@ function AddPackage() {
                       </Form.Group>
                       <Form.Group>
                         <Form.Control
+                          required
                           className="admin-dashboard-form-input"
                           as="textarea"
                           name="desc"
@@ -512,6 +528,7 @@ function AddPackage() {
                     <Col lg={10}>
                       <Form.Group>
                         <Form.Control
+                          required
                           className="admin-dashboard-form-input"
                           type="text"
                           name="type"
@@ -524,6 +541,7 @@ function AddPackage() {
                       </Form.Group>
                       <Form.Group>
                         <Form.Control
+                          required
                           className="admin-dashboard-form-input"
                           type="number"
                           name="cost"
@@ -565,6 +583,7 @@ function AddPackage() {
                     <Col lg={10}>
                       <Form.Group>
                         <Form.Control
+                          required
                           className="admin-dashboard-form-input"
                           type="text"
                           name="inclusion"
@@ -606,6 +625,7 @@ function AddPackage() {
                     <Col lg={10}>
                       <Form.Group>
                         <Form.Control
+                          required
                           className="admin-dashboard-form-input"
                           type="text"
                           name="exclusion"
@@ -688,6 +708,7 @@ function AddPackage() {
                     <Col lg={10}>
                       <Form.Group>
                         <Form.Control
+                          required
                           className="admin-dashboard-form-input"
                           type="text"
                           name="term"
@@ -729,6 +750,7 @@ function AddPackage() {
                     <Col lg={10}>
                       <Form.Group>
                         <Form.Control
+                          required
                           className="admin-dashboard-form-input"
                           type="text"
                           name="thing"
@@ -770,6 +792,7 @@ function AddPackage() {
                     <Col lg={10}>
                       <Form.Group>
                         <Form.Control
+                          required
                           className="admin-dashboard-form-input"
                           type="text"
                           name="customerName"
@@ -782,6 +805,7 @@ function AddPackage() {
                       </Form.Group>
                       <Form.Group>
                         <Form.Control
+                          required
                           className="admin-dashboard-form-input"
                           type="text"
                           name="customerReview"
@@ -819,6 +843,7 @@ function AddPackage() {
               <Col lg={10}>
                 <Form.Group>
                   <Form.Control
+                    required
                     className="admin-dashboard-form-input"
                     type="text"
                     name="map"
@@ -838,6 +863,7 @@ function AddPackage() {
                 {" "}
                 <Form.Group className="admin-dashboard-form-group">
                   <Form.File
+                    required
                     id="form-image"
                     name="packageImage"
                     onChange={handleImageChange}

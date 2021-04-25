@@ -3,7 +3,7 @@ import { Redirect } from "react-router-dom";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import firebase from "firebase";
 import Modal from "react-bootstrap/Modal";
-
+import {toast , ToastContainer} from "react-toastify"
 import "./AdminDashboard.css";
 import AdminSidebar from "./AdminSidebar";
 
@@ -312,7 +312,7 @@ function EditPackage(props) {
   const handleMapChange = (e) => {
     e.preventDefault();
     const { value } = e.target;
-    setMap(value.concat("&output=embed"));
+    setMap(value);
   };
 
   //Pricing dynamic part
@@ -347,7 +347,11 @@ function EditPackage(props) {
 
   const updatePackage = (e) => {
     e.preventDefault();
-    db.collection(packageType)
+    if(name == "" || pricing[0].type == "" || pricing[0].cost == 0 || duration == "" || map == "" || exclusions[0] == "" || dates[0] == "" || thingsNeeded[0] == "" || terms[0] == "" || inclusions[0] == "" || detailedItinerary[0].day == "" || detailedItinerary[0].desc == "" || detailedItinerary[0].title == ""){
+        toast.error("Some fiels are empty")
+    }
+    else{
+      db.collection(packageType)
       .doc(props.match.params.packageId)
       .update({
         overviews: overviews,
@@ -366,12 +370,14 @@ function EditPackage(props) {
       .then(() => {
         setUpdated(true);
       });
+    }
   };
 
   return (
     <div>
       {isUpdated ? <Redirect to="/admin/allpackages" /> : null}
       <AdminSidebar />
+      <ToastContainer />
       <MyVerticallyCenteredModal
         show={modalShow}
         onHide={() => setModalShow(false)}
