@@ -48,7 +48,9 @@ function SignUp() {
       {redirect && <Redirect to="/signin" />}
       <Card className="auth-card">
         <Card.Body>
-          <h4>Sign Up</h4>
+          <center>
+            <h4>Sign Up</h4>
+          </center>
           <Form className="auth-form">
             <Form.Group>
               <Form.Control
@@ -70,11 +72,15 @@ function SignUp() {
                 onChange={handleChange}
               />
             </Form.Group>
-            <Button onClick={handleSignUp} className="auth-button">Sign Up</Button>
+            <Button onClick={handleSignUp} className="auth-button">
+              Sign Up
+            </Button>
           </Form>
-          <div className="auth-text">
-            Already Registered? <Link to="/signin">Sign In</Link>
-          </div>
+          <center>
+            <div className="auth-text">
+              Already Registered? <Link to="/signin">Sign In</Link>
+            </div>
+          </center>
         </Card.Body>
       </Card>
     </div>

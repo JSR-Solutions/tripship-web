@@ -6,9 +6,8 @@ import Home from "./Core/Home";
 import Aboutus from "./Core/Aboutus";
 import ContactUs from "./Core/ContactUs";
 import AdminLogin from "./Admin/AdminLogin";
-import CustomPackage from "./Core/CustomPackage"
+import CustomPackage from "./Core/CustomPackage";
 import Screen from "./Components/Screen";
-
 
 import AdminRoute from "./Admin/AdminRoute";
 import AdminDashboard from "./Admin/AdminDashboard";
@@ -21,6 +20,8 @@ import SignIn from "./Auth/SignIn";
 import SignUp from "./Auth/SignUp";
 import UserRegistration from "./Auth/UserRegistration";
 import AllUsers from "./Admin/AllUsers";
+import EditUserDetails from "./Auth/EditUserDetails";
+import UserDashboard from "./Core/UserDashboard";
 
 function App() {
   return (
@@ -36,6 +37,8 @@ function App() {
           <Route path="/signin" exact component={SignIn} />
           <Route path="/signup" exact component={SignUp} />
           <Route path="/register" exact component={UserRegistration} />
+          <Route path="/user/editprofile" exact component={EditUserDetails} />
+          <Route path="/user" exact component={UserDashboard} />
           <AdminRoute
             path="/admin/dashboard"
             exact
