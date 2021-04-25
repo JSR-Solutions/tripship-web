@@ -30,7 +30,6 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/aboutus" exact component={Aboutus} />
-          <Route path="/screen" exact component={Screen} />
           <Route path="/contact-us" exact component={ContactUs} />
           <Route path="/custom-package" exact component={CustomPackage} />
           <Route path="/admin/login" exact component={AdminLogin} />
