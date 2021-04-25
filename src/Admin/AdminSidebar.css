@@ -64,11 +64,38 @@
 
 /* Local classes */
 
+.admin-sidebar-title {
+    color: white;
+    font-size: xx-large;
+    transition: 0.25s ease-in-out;
+}
+
+.admin-sidebar-title:hover {
+    transform: scale(1.15) !important;
+}
+
+.admin-sidebar-divider {
+    background-color: white;
+    height: 0.3px;
+    margin-bottom: 60px;
+}
+
+.admin-sidebar-icon {
+    color: white;
+    margin-right: 12px;
+    transition: 0.25s ease-in-out;
+}
+
 .admin-sidebar-link {
     color: white !important;
     text-decoration: none !important;
+    margin-bottom: 24px;
 }
 
 .admin-sidebar-link:hover {
     color: rgb(216, 214, 214) !important;
+}
+
+.admin-sidebar-link:hover .admin-sidebar-icon {
+    transform: scale(1.5);
 }
