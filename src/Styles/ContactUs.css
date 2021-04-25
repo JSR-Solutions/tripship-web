@@ -89,9 +89,6 @@
 .contact-address p{
     padding-left: 28px;
 }
-.errt{
-    color: red;
-}
 
 @media(max-width:500px){
     .contact-form{
