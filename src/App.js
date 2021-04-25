@@ -7,7 +7,6 @@ import Aboutus from "./Core/Aboutus";
 import ContactUs from "./Core/ContactUs";
 import AdminLogin from "./Admin/AdminLogin";
 import CustomPackage from "./Core/CustomPackage";
-import Screen from "./Components/Screen";
 
 import AdminRoute from "./Admin/AdminRoute";
 import AdminDashboard from "./Admin/AdminDashboard";

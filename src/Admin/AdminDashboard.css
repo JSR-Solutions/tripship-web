@@ -37,14 +37,17 @@
     margin-bottom: 24px;
     border-radius: 12px !important;
     box-shadow:
-  0 1.6px 3.9px -9px rgba(0, 0, 0, -0.001),
-  0 4px 9.9px -9px rgba(0, 0, 0, 0.009),
-  0 8.2px 20.2px -9px rgba(0, 0, 0, 0.033),
-  0 16.8px 41.6px -9px rgba(0, 0, 0, 0.072),
-  0 46px 114px -9px rgba(0, 0, 0, 0.12)
-;
-
+        0 1.6px 3.9px -9px rgba(0, 0, 0, -0.001),
+        0 4px 9.9px -9px rgba(0, 0, 0, 0.009),
+        0 8.2px 20.2px -9px rgba(0, 0, 0, 0.033),
+        0 16.8px 41.6px -9px rgba(0, 0, 0, 0.072),
+        0 46px 114px -9px rgba(0, 0, 0, 0.12);
     border: none !important;
+    transition: 0.3s ease-in-out;
+}
+
+.admin-card:hover {
+    transform: scale(1.05);
 }
 
 
