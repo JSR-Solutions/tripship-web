@@ -3,7 +3,14 @@ import AdminSidebar from "./AdminSidebar";
 import { Card, Col, Row, Button } from "react-bootstrap";
 
 import "./AdminDashboard.css";
+import packages from "../Assets/packages.png";
+import addpackage from "../Assets/addpackage.png";
+import allusers from "../Assets/allusers.png";
+import booking from "../Assets/booking.png";
+import callbackrequest from "../Assets/callbackrequest.png";
+import custompackage from "../Assets/custompackage.png";
 import { Link } from "react-router-dom";
+import AdminCard from "./AdminCard";
 
 function AdminDashboard() {
   return (
@@ -14,85 +21,49 @@ function AdminDashboard() {
         <p>Here are some shortcuts to get you started immediately.</p>
         <Row className="admin-dashboard-row">
           <Col lg={4}>
-            <Card>
-              <Card.Body>
-                <h4>All Packages</h4>
-              </Card.Body>
-              <Card.Footer>
-                <Link to="/admin/allpackages">
-                  {" "}
-                  <Button className="admin-button">View All Packages</Button>
-                </Link>
-              </Card.Footer>
-            </Card>
+            <AdminCard
+              img={packages}
+              title="All Packages"
+              link="/admin/allpackages"
+            />
           </Col>
           <Col lg={4}>
-            <Card>
-              <Card.Body>
-                <h4>Add Packages</h4>
-              </Card.Body>
-              <Card.Footer>
-                <Link to="/admin/addpackage">
-                  {" "}
-                  <Button className="admin-button">Add A Package</Button>
-                </Link>
-              </Card.Footer>
-            </Card>
+            <AdminCard
+              img={addpackage}
+              title="Add Packages"
+              link="/admin/addpackage"
+            />
           </Col>
           <Col lg={4}>
-            <Card>
-              <Card.Body>
-                <h4>Custom Package Requests</h4>
-              </Card.Body>
-              <Card.Footer>
-                <Link to="/admin/customrequests">
-                  {" "}
-                  <Button className="admin-button">View All Requests</Button>
-                </Link>
-              </Card.Footer>
-            </Card>
+            <AdminCard
+              img={custompackage}
+              title="Custom Package Requests"
+              link="/admin/customrequests"
+            />
           </Col>
         </Row>
 
         <Row className="admin-dashboard-row">
           <Col lg={4}>
-            <Card>
-              <Card.Body>
-                <h4>Callback Requests</h4>
-              </Card.Body>
-              <Card.Footer>
-                <Link to="/admin/callback">
-                  {" "}
-                  <Button className="admin-button">View All Requests</Button>
-                </Link>
-              </Card.Footer>
-            </Card>
+            <AdminCard
+              img={callbackrequest}
+              title="Callback Requests"
+              link="/admin/callback"
+            />
           </Col>
           <Col lg={4}>
-            <Card>
-              <Card.Body>
-                <h4>All Users</h4>
-              </Card.Body>
-              <Card.Footer>
-                <Link to="/admin/users">
-                  {" "}
-                  <Button className="admin-button">View All Users</Button>
-                </Link>
-              </Card.Footer>
-            </Card>
+            <AdminCard
+              img={allusers}
+              title="All Users"
+              link="/admin/users"
+            />
           </Col>
           <Col lg={4}>
-            <Card>
-              <Card.Body>
-                <h4>All Bookings</h4>
-              </Card.Body>
-              <Card.Footer>
-                <Link to="/">
-                  {" "}
-                  <Button className="admin-button">View All Bookings</Button>
-                </Link>
-              </Card.Footer>
-            </Card>
+            <AdminCard
+              img={booking}
+              title="All Bookings"
+              link="/admin/dashboard"
+            />
           </Col>
         </Row>
       </div>

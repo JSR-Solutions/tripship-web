@@ -3,7 +3,7 @@
 }
 
 .admin-dashboard-row {
-    margin: 96px 24px !important;
+    margin: 40px 24px !important;
 }
 
 .admin-dashboard-content-div {
@@ -25,6 +25,39 @@
 .admin-dashboard-form-button:hover {
     background-color: transparent !important;
     color: var(--primary) !important;
+}
+
+.admin-dashboard-img {
+    height: 40% !important;
+    width: 40% !important;
+}
+
+.admin-card {
+    width: fit-content !important;
+    margin-bottom: 24px;
+    border-radius: 12px !important;
+    box-shadow:
+  0 1.6px 3.9px -9px rgba(0, 0, 0, -0.001),
+  0 4px 9.9px -9px rgba(0, 0, 0, 0.009),
+  0 8.2px 20.2px -9px rgba(0, 0, 0, 0.033),
+  0 16.8px 41.6px -9px rgba(0, 0, 0, 0.072),
+  0 46px 114px -9px rgba(0, 0, 0, 0.12)
+;
+
+    border: none !important;
+}
+
+
+.admin-card-title {
+    margin: 6px;
+    text-decoration: none !important;
+    color: #222;
+}
+
+.admin-card-title:hover,
+.admin-card-link {
+    text-decoration: none !important;
+    color: #222;
 }
 
 .admin-dashboard-form hr {
