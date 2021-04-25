@@ -81,13 +81,14 @@ function EditPackage(props) {
       .then((snapshot) => {
         if (snapshot) {
           const data = snapshot.data();
+          console.log(data.map.substring(data.map.length -13))
           setOverviews(data.overviews);
           setInclusions(data.inclusions);
           setTerms(data.terms);
           setThingsNeeded(data.thingsNeeded);
           setDates(data.dates);
           setExclusions(data.exclusions);
-          setMap(data.map);
+          setMap(data.map.replace(data.map.substring(data.map.length -13),""));
           setName(data.name);
           setDuration(data.duration);
           setDetailedItinerary(data.detailedItinerary);
@@ -357,7 +358,7 @@ function EditPackage(props) {
         overviews: overviews,
         inclusions: inclusions,
         exclusions: exclusions,
-        map: map,
+        map: map.concat("&output=embed"),
         terms: terms,
         name: name,
         dates: dates,
