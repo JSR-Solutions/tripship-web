@@ -13,6 +13,7 @@ function AdminSidebar() {
           <Link className="admin-sidebar-link" to="/admin/addpackage">Add Package</Link>
           <Link className="admin-sidebar-link" to="/admin/callback">Callback Requests</Link>
           <Link className="admin-sidebar-link" to="/admin/customrequests">Custom Requests</Link>
+          <Link className="admin-sidebar-link" to="/admin/users">All Users</Link>
       </Menu>
   </div>;
 }

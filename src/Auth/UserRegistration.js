@@ -49,6 +49,7 @@ function UserRegistration() {
           phone: userData.phone,
           address: userData.address,
           email: userData.email,
+          uid: uid
         })
         .then(() => {
           setRegistered(true);
