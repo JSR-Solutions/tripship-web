@@ -49,7 +49,7 @@ function UserRegistration() {
           phone: userData.phone,
           address: userData.address,
           email: userData.email,
-          uid: uid
+          uid: uid,
         })
         .then(() => {
           setRegistered(true);
@@ -62,7 +62,9 @@ function UserRegistration() {
       {registered && <Redirect to="/" />}
       <Card className="auth-card">
         <Card.Body>
-          <h4>Register</h4>
+          <center>
+            <h4>Register</h4>
+          </center>
           <Form className="auth-form">
             <Form.Group>
               <Form.Control

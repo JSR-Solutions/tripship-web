@@ -10,6 +10,8 @@
 
 .auth-card {
     min-width: 35vw !important;
+    margin-bottom: 24px;
+    text-align: left;
 }
 
 .auth-card,
@@ -38,6 +40,11 @@
     transition: 0.25s ease-in-out;
 }
 
+.auth-button-2 {
+    width: 80%;
+    margin: 12px;
+}
+
 .auth-button:hover {
     background: rgba(255, 255, 255, 0.5) !important;
     color: black !important;
@@ -50,6 +57,11 @@
 
 .auth-text a {
     text-decoration: none !important;
+}
+
+.auth-button-row {
+    margin: 0px 12px 12px 12px;
+    text-align: center;
 }
 
 @media screen and (max-width: 1100px) {

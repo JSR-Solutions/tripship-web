@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../Styles/Header.css";
 import { Link, withRouter } from "react-router-dom";
 import Logo from "../Assets/logo.jfif";
 import { FiMail, FiPhone } from "react-icons/fi";
 import { AiOutlineClose } from "react-icons/ai";
+import firebase from "firebase";
 
 const isActive = (history, path) => {
   if (history.location.pathname === path) {
@@ -14,6 +15,21 @@ const isActive = (history, path) => {
 };
 
 const Header = ({ history }) => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const auth = firebase.auth();
+
+  useEffect(() => {
+    getLoginState();
+  }, []);
+
+  const getLoginState = () => {
+    auth.onAuthStateChanged((userCredentials) => {
+      if (userCredentials) {
+        setIsLoggedIn(true);
+      }
+    });
+  };
+
   const changebackgroundd = () => {
     if (window.scrollY > 110) {
       const navlink = document.querySelector(".header-main2");
@@ -162,14 +178,25 @@ const Header = ({ history }) => {
                     >
                       <li>Backpacking Trip</li>
                     </Link>
-                    <Link
-                      className="deconone"
-                      to="/sign-up"
-                      style={isActive(history, "/sign-us")}
-                      onClick={changeScreen}
-                    >
-                      <li>Trek</li>
-                    </Link>
+                    {isLoggedIn ? (
+                      <Link
+                        className="deconone"
+                        to="/user"
+                        style={isActive(history, "/user")}
+                        onClick={changeScreen}
+                      >
+                        <li>Profile</li>
+                      </Link>
+                    ) : (
+                      <Link
+                        className="deconone"
+                        to="/signin"
+                        style={isActive(history, "/signin")}
+                        onClick={changeScreen}
+                      >
+                        <li>Sign In</li>
+                      </Link>
+                    )}
                   </ul>
                 </div>
               </div>
