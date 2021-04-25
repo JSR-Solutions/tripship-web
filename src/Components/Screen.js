@@ -121,14 +121,14 @@ const Screen = () => {
 
   return (
     <div className="cat-main">
-      {/* <div ref={el => overlay = el} class="overlay">
-        <h1 ref={el => overlay_h1 = el}>TRIP</h1>
-        <span ref={el => overlay_span = el}>SHRIP</span>
-      </div> */}
+      <div ref={overlay} className="overlay">
+        <h1 ref={overlay_h1}>TRIP</h1>
+        <span ref={overlay_span}>SHRIP</span>
+      </div>
 
-      <div class="wrapper">
-        <div class="nav">
-          <div ref={el => logo = el} class="logo">
+      <div className="wrapper">
+        <div className="nav">
+          <div ref={logo} className="logo">
             <h1>
               <span>CATEGORY</span>
               <br />
@@ -136,36 +136,36 @@ const Screen = () => {
             </h1> 
           </div>
 
-          <div ref={el => menu_links_ul_li = el} class="menu-links">
+          <div ref={menu_links_ul_li} className="menu-links">
             <ul>
-              <li ref={el => menu_links_ul_li  = el}>|</li>
-              <li ref={el => menu_links_ul_li = el}>Category Name</li>
-              <li ref={el => menu_links_ul_li = el}>|</li>
+              <li ref={menu_links_ul_li}>|</li>
+              <li ref={menu_links_ul_li}>Category Name</li>
+              <li ref={menu_links_ul_li}>|</li>
             </ul>
           </div>
 
-          <div ref={el => overlay = el} class="scrolldown">Category Name</div>
+          <div ref={scrolldown} className="scrolldown">Category Name</div>
         </div>
 
-        <div ref={el => text = el} class="text">
-          <div ref={el => title = el} class="title">category</div>
-          <p ref={el => text_p = el}>
+        <div ref={text} className="text">
+          <div ref={title} className="title">category</div>
+          <p ref={text_p}>
             thoda sa description <br /> category k baare mein <br />
             thoda zyada bhi chalega XD
           </p>
         </div>
 
-        <div ref={el => watchnow = el} class="watchnow">
-          <i class="fa fa-circle"></i>
+        <div ref={watchnow} className="watchnow">
+          <i className="fa fa-circle"></i>
           <a href="#"></a>
         </div>
 
-        <div ref={el => overlay = el} class="ellipse-container">
-          <div class="ellipse thin"></div>
-          <div class="ellipse thick"></div>
-          <div class="ellipse yellow"></div>
-          <div ref={el => circle1= el} class="circle1"></div>
-          <div ref={el => circle2 = el} class="circle2"></div>
+        <div ref={ellipse_container} className="ellipse-container">
+          <div className="ellipse thin"></div>
+          <div className="ellipse thick"></div>
+          <div className="ellipse yellow"></div>
+          <div ref={circle1} className="circle1"></div>
+          <div ref={circle2} className="circle2"></div>
         </div>
       </div>
     </div>
