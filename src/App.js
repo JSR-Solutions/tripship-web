@@ -15,11 +15,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/aboutus" exact component={Aboutus} />
-
-          
-
           <Route path="/contact-us" exact component={ContactUs}/>
-
         </Switch>
         <Footer />
       </Router>
