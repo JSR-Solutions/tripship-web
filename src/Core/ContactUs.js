@@ -224,7 +224,7 @@ function Contact() {
             contact us
           </div>
           <p ref={text_p}>
-          “Remember that <br/>happiness is a way of travel,<br/> not a destination.”
+          “Travel is the only thing you<br/> buy that makes you richer.”
           </p>
         </div>
 

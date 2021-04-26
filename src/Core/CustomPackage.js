@@ -237,7 +237,7 @@ function CustomPackage() {
             custom package
           </div>
           <p ref={text_p}>
-          “Remember that <br/>happiness is a way of travel,<br/> not a destination.”
+          “Jobs fill your pockets, <br/> adventures fill your soul.”
           </p>
         </div>
 
