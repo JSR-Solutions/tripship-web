@@ -12,7 +12,7 @@ function CategoryScreen(props) {
 
   useEffect(() => {
     getPackages();
-  }, []);
+  }, [props]);
 
   const getPackages = () => {
     setPackages([]);
