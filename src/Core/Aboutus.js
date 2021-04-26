@@ -2,6 +2,8 @@ import React, { useRef, useEffect } from "react";
 import "../Styles/Aboutus.css";
 import "../Styles/Screen.css";
 import { TweenMax, Expo } from "gsap";
+import Header from "../Components/Header";
+import Footer from "../Components/Footer";
 import exp from "../Assets/experience.png";
 import staff from "../Assets/employees.png";
 import Headings from "./Headings";
@@ -139,6 +141,8 @@ const Screen = () => {
   }, []);
 
   return (
+    <div>
+    <Header/>
     <div className="cat-main">
       <div ref={overlay} className="overlay">
         <h1 ref={overlay_h1}>TRIP</h1>
@@ -277,6 +281,8 @@ const Screen = () => {
           d="M0,96L1440,160L1440,0L0,0Z"
         ></path>
       </svg>
+    </div>
+    <Footer/>
     </div>
   );
 };
