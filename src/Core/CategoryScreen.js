@@ -178,8 +178,8 @@ function CategoryScreen(props) {
           </div>
         </div>
 
-        <div ref={text} className="text">
-          <div ref={title} className="title">
+        <div ref={text} className="text3">
+          <div ref={title} className="title3">
           {props.match.params.category}
           </div>
           <p ref={text_p}>
