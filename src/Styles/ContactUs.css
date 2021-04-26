@@ -1,5 +1,5 @@
 .contact_back{
-    background: linear-gradient(45deg, rgba(44, 44, 44, 0.45), rgba(44, 44, 44, 0.45)), url("../Assets/contactUs_back.jpg");
+    
    
    background-position: center;
    background-repeat: no-repeat;
@@ -9,13 +9,13 @@
 
 .contact_back h1{
     font-weight: bolder;
-    color: white;
+    color: #494949;
     padding-top: 50px;
     font-size: 50px!important;
 }
 .contact_hr{
     width: 100px;
-    border-color: orangered;
+    border-color: #ffeb00;
     height:4px!important;
     border-width: 3px;
     position:absolute;
@@ -24,7 +24,7 @@
 }
 .contact_hr1{
     width: 30px;
-    border-color: white;
+    border-color: #494949;
     height:4px!important;
     border-width: 3px;
     position:absolute;
@@ -37,7 +37,7 @@
 }
 .form_hr{
     width: 90px;
-    border-color: orangered;
+    border-color: #ffeb00;
     height:4px!important;
     border-width: 3px;
     text-align: left;
@@ -48,38 +48,39 @@
     padding-left: 70px;
 }
 .contact-form h2{
-    color: white;
+    color: #494949;
     font-weight: bolder;
 
 }
 .contact-address h2{
-    color: white;
+    color: #494949;
     font-weight: bolder;
 
 }
 .contact-address{
    text-align: left;
-   color:white;
+   color:#494949;
 }
 .h_form_input{
     margin-bottom: 10px!important;
     background-color: transparent!important;
-    color:white!important;
+    color:#494949!important;
     border-width: 2px!important;
     min-width: 200px;
 }
 .h_form_input::placeholder{
-    color: white!important;
+    color: #494949!important;
 }
 .h_form_button{
-    background-color: orangered!important;
-    border-color: orangered!important;
+    background-color: #ffeb00!important;
+    border-color: #ffeb00!important;
     width:90px!important;
     margin-bottom: 30px;
+    color:black!important;
 }
 .h_form_button:hover{
     background-color: transparent!important;
-    color: orangered!important;
+    color: #ffeb00!important;
     border-width: 2px!important;
 }
 .contact-address h4,img{
