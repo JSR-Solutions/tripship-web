@@ -31,6 +31,11 @@
 
 }
 
+.package-card {
+    text-decoration: none !important;
+    color: black !important;
+}
+
 .card-text {
     grid-area: text;
     margin: 25px;
