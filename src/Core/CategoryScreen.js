@@ -7,6 +7,7 @@ import firebase from "firebase";
 import { Col, Row } from "react-bootstrap";
 import Card from "../Components/Card1";
 import { Link } from "react-router-dom";
+import Loader from "../Components/Loader";
 
 function CategoryScreen(props) {
   let overlay = useRef(null);
@@ -25,6 +26,7 @@ function CategoryScreen(props) {
   let watchnow = useRef(null);
 
   const [packages, setPackages] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const db = firebase.firestore();
 
   useEffect(() => {
@@ -128,9 +130,10 @@ function CategoryScreen(props) {
       x: 200,
       ease: Expo.easeInOut,
     });
-  }, []);
+  }, [isLoading]);
 
   const getPackages = () => {
+    setIsLoading(true);
     setPackages([]);
     db.collection(props.match.params.category)
       .get()
@@ -143,13 +146,18 @@ function CategoryScreen(props) {
             });
           });
         }
+        setIsLoading(false);
       });
   };
+
+  if (isLoading) {
+    return <Loader />;
+  }
 
   return (
     <div>
       <Header />
-      
+
       <div ref={overlay} className="overlay">
         <h1 ref={overlay_h1}>TRIP</h1>
         <span ref={overlay_span}>SHRIP</span>
@@ -174,16 +182,17 @@ function CategoryScreen(props) {
           </div>
 
           <div ref={scrolldown} className="scrolldown">
-          {props.match.params.category}
+            {props.match.params.category}
           </div>
         </div>
 
         <div ref={text} className="text3">
           <div ref={title} className="title3">
-          {props.match.params.category}
+            {props.match.params.category}
           </div>
           <p ref={text_p}>
-          “ Stop worrying <br/> about the potholes in the road <br/> and enjoy the journey.”
+            “ Stop worrying <br /> about the potholes in the road <br /> and
+            enjoy the journey.”
           </p>
         </div>
 
@@ -204,7 +213,8 @@ function CategoryScreen(props) {
         {packages.map((pckg) => {
           return (
             <Col lg={3} md={4} sm={12}>
-              <Link className="package-card"
+              <Link
+                className="package-card"
                 to={`/packages/${props.match.params.category}/${pckg.packageId}`}
               >
                 <Card
