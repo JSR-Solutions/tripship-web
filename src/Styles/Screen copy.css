@@ -263,88 +263,56 @@
   letter-spacing: 1px;
 }
 
-.section-one {
-  height: 100vh;
-  text-align: left;
-  background: white;
-  color: #222;
-  position: relative;
+@media screen and (max-width:850px) {
+  .ellipse-container {
+    width: 508px !important;
+    height: 508px !important;
+    position: absolute;
+    top: 80% !important;
+    background: url("../Assets/mountains.png") no-repeat;
+    background-position: 50%;
+    background-size: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    margin: 0 auto;
+    z-index: -1;
+  }
+
+  
 }
 
-.section-one img {
-  width: 50%;
-  height: 100vh;
-  position: absolute;
-  object-fit: cover;
-  right: 0;
-  top: 0;
-  z-index: -5;
+@media screen and (max-width:975px) {
+  .ellipse-container-2 {
+    width: 308px !important;
+    height: 308px !important;
+    position: absolute;
+    top: 50%;
+    background: url("https://images.unsplash.com/photo-1516685304081-de7947d419d5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80") no-repeat;
+    background-position: 50%;
+    background-size: 100%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    margin: 0 auto;
+    z-index: -1;
+  }
+
 }
 
-.sec-one-content {
-  padding: 9em 5em;
-  z-index: 1;
-  position: relative;
-}
+@media screen and (max-width:1160px) {
+  .text2 {
+    position: absolute;
+    top: 25%;
+    right: 50px !important;
+    transform: translateY(-50%);
+    text-align: right !important;
+  }
 
-.sec-one-content h2{
-font-size: 5em;
-margin-bottom: 0;
-}
-
-.sec-one-content p{
-  font-size: 1.6em;
-  margin-left: 40px;
-}
-
-.ellipse-container-2 {
-  width: 408px;
-  height: 408px;
-  position: absolute;
-  top: 50%;
-  background: url("https://images.unsplash.com/photo-1516685304081-de7947d419d5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80") no-repeat;
-  background-position: 50%;
-  background-size: 100%;
-  left: 75%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  margin: 0 auto;
-  z-index: -1;
-}
-
-.ellipse2 {
-  position: absolute;
-  top: 0;
-  border-radius: 50%;
-  border-style: solid;
-}
-
-.ellipse2.thin2 {
-  width: 100%;
-  height: 100%;
-  border-width: 1px;
-  border-color: #494949;
-  opacity: 0.5;
-}
-
-.ellipse2.thick2 {
-  width: 93%;
-  height: 93%;
-  border-width: 10px;
-  border-color: #fff;
-  transform: rotate(-45deg);
-  top: 12px;
-  left: 12px;
-}
-
-.ellipse2.yellow2 {
-  width: 93%;
-  height: 93%;
-  border-width: 10px;
-  border-color: yellow transparent;
-  transform: rotate(-45deg);
-  top: 12px;
-  left: 12px;
+  .text2 .title2 {
+    font-size: 110px !important;
+    padding-top: 160px !important;
+  }
 }
 
 @media screen and (max-width:576px) {
