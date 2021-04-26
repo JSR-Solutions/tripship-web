@@ -75,7 +75,7 @@
   transform: translateY(10px);
 }
 
-.text {
+.text2 {
   position: absolute;
   top: 25%;
   right: 180px;
@@ -84,7 +84,7 @@
   color: #494949;
 }
 
-.text .title {
+.text2 .title2 {
   font-size: 120px;
   padding-top: 80px;
 }
@@ -345,5 +345,112 @@ margin-bottom: 0;
   transform: rotate(-45deg);
   top: 12px;
   left: 12px;
+}
+
+@media screen and (max-width:576px) {
+
+
+  .logo{
+    display:none !important;
+  }
+
+  .logo h1{
+    display: none !important;
+  }
+
+  .logo span{
+    display: none !important;
+  }
+
+  .menu-links{
+    display : none !important;
+  }
+
+  .menu-links ul{
+    display: none !important;
+  }
+
+  .menu-links ul li{
+    display: none !important;
+  }
+
+  .scrolldown{
+    display: none !important;
+  }
+
+  .scrolldown::before{
+    display: none !important;
+  }
+
+  .watchnow{
+    display: none !important;
+  }
+
+  .watchnow a{
+    display: none !important;
+  }
+
+  .fa-circle{
+    display: none !important;
+  }
+
+  .ellipse-container-2 {
+    width: 408px !important;
+    height: 408px !important;
+    position: absolute;
+    top: 80% !important;
+    background: url("../Assets/mountains.png") no-repeat;
+    background-position: 50%;
+    background-size: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    margin: 0 auto;
+    z-index: -1;
+  }
+
+  .text2 {
+    position: absolute;
+    top: 25%;
+    right: 50px !important;
+    transform: translateY(-50%);
+    text-align: right !important;
+  }
+
+  .text2 .title2 {
+    font-size: 80px !important;
+    padding-top: 160px !important;
+  }
+
+  .circle1,
+.circle2{
+  display: none !important;
+}
+
+.section-one {
+  height: auto !important;
+  text-align: left;
+  background: white;
+  color: #222;
+  position: relative;
+}
+
+.sec-one-content p{
+  font-size: 1em !important;
+  margin: 10px !important;
+  color: #222 !important;
+  font-weight: 500 !important;
+}
+
+.sec-one-content h2{
+  font-size: 3.5em !important;
+  margin-bottom: 80px !important;
+  }
+
+  
+
+
+  
+
 }
 

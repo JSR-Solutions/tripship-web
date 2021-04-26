@@ -75,7 +75,7 @@
   transform: translateY(10px);
 }
 
-.text {
+.text3 {
   position: absolute;
   top: 25%;
   right: 180px;
@@ -84,7 +84,7 @@
   color: #494949;
 }
 
-.text .title {
+.text3 .title3 {
   font-size: 100px;
   padding-top: 80px;
   text-transform: lowercase;
@@ -346,5 +346,93 @@ margin-bottom: 0;
   transform: rotate(-45deg);
   top: 12px;
   left: 12px;
+}
+
+@media screen and (max-width:576px) {
+
+
+  .logo{
+    display:none !important;
+  }
+
+  .logo h1{
+    display: none !important;
+  }
+
+  .logo span{
+    display: none !important;
+  }
+
+  .menu-links{
+    display : none !important;
+  }
+
+  .menu-links ul{
+    display: none !important;
+  }
+
+  .menu-links ul li{
+    display: none !important;
+  }
+
+  .scrolldown{
+    display: none !important;
+  }
+
+  .scrolldown::before{
+    display: none !important;
+  }
+
+  .watchnow{
+    display: none !important;
+  }
+
+  .watchnow a{
+    display: none !important;
+  }
+
+  .fa-circle{
+    display: none !important;
+  }
+
+  .ellipse-container {
+    width: 408px !important;
+    height: 408px !important;
+    position: absolute;
+    top: 80% !important;
+    background: url("../Assets/mountains.png") no-repeat;
+    background-position: 50%;
+    background-size: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    margin: 0 auto;
+    z-index: -1;
+  }
+
+  .text3 {
+    position: absolute;
+    top: 25%;
+    right: 50px !important;
+    transform: translateY(-50%);
+    text-align: right;
+  }
+
+  .text3 .title3 {
+    font-size: 70px !important;
+    padding-top: 180px !important;
+  }
+
+  .circle1,
+.circle2{
+  display: none !important;
+}
+
+
+
+  
+
+  
+
 }
 

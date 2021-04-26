@@ -232,8 +232,8 @@ function CustomPackage() {
           </div>
         </div>
 
-        <div ref={text} className="text">
-          <div ref={title} className="title">
+        <div ref={text} className="text2">
+          <div ref={title} className="title2">
             custom package
           </div>
           <p ref={text_p}>
