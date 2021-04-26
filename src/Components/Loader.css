@@ -1,0 +1,80 @@
+.svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    transform: translate(-50%, -50%) rotate(0deg);
+    -webkit-animation: rotate 1.8s linear infinite;
+            animation: rotate 1.8s linear infinite;
+  }
+  .svg circle {
+    fill: none;
+    stroke: yellow;
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-dashoffset: -140.5970149254px;
+    stroke-dasharray: 0.01, 942, 0, 0, 0, 0, 0, 0;
+    -webkit-animation: stroke-dasharray 1.8s linear infinite, stroke-width 1.8s linear infinite;
+            animation: stroke-dasharray 1.8s linear infinite, stroke-width 1.8s linear infinite;
+  }
+  
+  @-webkit-keyframes rotate {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+  @-webkit-keyframes stroke-width {
+    0%, 100% {
+      stroke-width: 12;
+    }
+    5%, 95% {
+      stroke-width: 10;
+    }
+    40%, 60% {
+      stroke-width: 4;
+    }
+  }
+  @keyframes stroke-width {
+    0%, 100% {
+      stroke-width: 12;
+    }
+    5%, 95% {
+      stroke-width: 10;
+    }
+    40%, 60% {
+      stroke-width: 4;
+    }
+  }
+  @-webkit-keyframes stroke-dasharray {
+    0%, 5%, 95%, 100% {
+      stroke-dasharray: 0.01, 942px, 0, 0, 0, 0, 0, 0;
+    }
+    50% {
+      stroke-dasharray: 0.01, 906px, 0.01, 10, 0.01, 12, 0.01, 14;
+    }
+  }
+  @keyframes stroke-dasharray {
+    0%, 5%, 95%, 100% {
+      stroke-dasharray: 0.01, 942px, 0, 0, 0, 0, 0, 0;
+    }
+    50% {
+      stroke-dasharray: 0.01, 906px, 0.01, 10, 0.01, 12, 0.01, 14;
+    }
+  }
+  body {
+    background: #222;
+    overflow: hidden;
+  }
