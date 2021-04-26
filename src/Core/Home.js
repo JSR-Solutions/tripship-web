@@ -4,7 +4,6 @@ import Landing from "../Components/Landingscreen";
 import Carousel from "../Components/Carousel";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
-import SmallCarousel from "../Components/smallCarousel"
 import SmallCarousel2 from "../Components/samlcarousel2"
 
 
@@ -14,7 +13,6 @@ const Home = () => {
       <Header />
       <Landing />
       <Carousel />
-      <SmallCarousel />
       <SmallCarousel2 />
       <Footer />
 
