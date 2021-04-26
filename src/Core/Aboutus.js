@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
-import "../Styles/Screen.css";
 import "../Styles/Aboutus.css";
+import "../Styles/Screen.css";
 import { TweenMax, Expo } from "gsap";
 import exp from "../Assets/experience.png";
 import staff from "../Assets/employees.png";
