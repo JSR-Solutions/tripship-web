@@ -256,10 +256,7 @@ function CustomPackage() {
       </div>
       <ToastContainer />
       <div className="h_custBack">
-        <h1>Custom Package</h1>
-
-        <hr className="contact_hr"></hr>
-        <hr className="contact_hr1"></hr>
+        
         <Row>
           <Col>
             <div>

@@ -243,10 +243,7 @@ function Contact() {
       </div>
       <ToastContainer />
       <div className="contact_back">
-        <h1>Contact Us</h1>
-
-        <hr className="contact_hr"></hr>
-        <hr className="contact_hr1"></hr>
+        
         <Row className="contact-row">
           <Col>
             <div className="contact-form">

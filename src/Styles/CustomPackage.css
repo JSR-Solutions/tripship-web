@@ -1,5 +1,5 @@
 .h_custBack{
-    background: linear-gradient(45deg, rgba(44, 44, 44, 0.55), rgba(44, 44, 44, 0.55)), url("../Assets/customP_back.jpg");
+    
    
    background-position: center;
    background-repeat: no-repeat;
@@ -17,19 +17,19 @@
 }
 .h_custBack h1{
     font-weight: bolder;
-    color: white;
+    color: #494949;
     padding-top: 50px;
     font-size: 50px!important;
 }
 
 .h_customform h2{
-    color: white;
+    color:#494949;
     font-size: 40px;
     
     font-weight: bold;
 }
 .custom_qoute h1{
-    color:white;
+    color:#494949;
     font-size: 60px;
     margin-top:200px ;
     margin-right: 20px;
