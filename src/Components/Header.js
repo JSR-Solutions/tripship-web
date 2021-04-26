@@ -140,11 +140,27 @@ const Header = ({ history }) => {
                     </Link>
                     <Link
                       className="deconone"
-                      to="/musafirrana/packages"
-                      style={isActive(history, "/musafirrana/packages")}
+                      to="/packages/Backpacking Trips"
+                      style={isActive(history, "/packages/Backpacking Trips")}
                       onClick={changeScreen}
                     >
                       <li>Backpacking Trip</li>
+                    </Link>
+                    <Link
+                      className="deconone"
+                      to="/packages/Treks"
+                      style={isActive(history, "/packages/Treks")}
+                      onClick={changeScreen}
+                    >
+                      <li>Treks</li>
+                    </Link>
+                    <Link
+                      className="deconone"
+                      to="/packages/Bike Trips"
+                      style={isActive(history, "/packages/Bike Trips")}
+                      onClick={changeScreen}
+                    >
+                      <li>Bike Trips</li>
                     </Link>
                     <Link
                       className="deconone"
@@ -169,14 +185,6 @@ const Header = ({ history }) => {
                       onClick={changeScreen}
                     >
                       <li>Contact Us</li>
-                    </Link>
-                    <Link
-                      className="deconone"
-                      to="/sign-up"
-                      style={isActive(history, "/sign-us")}
-                      onClick={changeScreen}
-                    >
-                      <li>Backpacking Trip</li>
                     </Link>
                     {isLoggedIn ? (
                       <Link

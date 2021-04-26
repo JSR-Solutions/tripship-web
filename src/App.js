@@ -22,6 +22,7 @@ import AllUsers from "./Admin/AllUsers";
 import EditUserDetails from "./Auth/EditUserDetails";
 import UserDashboard from "./Core/UserDashboard";
 import Singlepackage from './Core/Singlepackagescreen/Singlepackage';
+import CategoryScreen from "./Core/CategoryScreen";
 
 function App() {
   return (
@@ -34,7 +35,8 @@ function App() {
           <Route path="/custom-package" exact component={CustomPackage} />
           <Route path="/admin/login" exact component={AdminLogin} />
           <Route path="/signin" exact component={SignIn} />
-          <Route paht='/package/:package_id' exact component={Singlepackage} />
+          <Route path="/packages/:category" exact component={CategoryScreen} />
+          <Route path="/packages/:category/:packageId" exact component={Singlepackage} />
           <Route path="/signup" exact component={SignUp} />
           <Route path="/register" exact component={UserRegistration} />
           <Route path="/user/editprofile" exact component={EditUserDetails} />
