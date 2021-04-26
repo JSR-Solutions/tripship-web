@@ -15,6 +15,7 @@ import { StickyContainer, Sticky } from "react-sticky";
 import "react-alice-carousel/lib/alice-carousel.css";
 import Imagess from "./imageGallery";
 import { FaRupeeSign } from "react-icons/fa";
+import Loader from "../../Components/Loader";
 
 const Singlepackage = (props) => {
   const [pack, setpack] = useState("");
@@ -42,9 +43,11 @@ const Singlepackage = (props) => {
             setmap("https://maps.google.com/maps?q=India&output=embed");
           } else {
             setmap(ress.data().map);
+            setFetching(false);
           }
         } else {
-          setpack("");
+            setFetching(false);
+            setpack("");
         }
       });
   }, []);
@@ -67,6 +70,10 @@ const Singlepackage = (props) => {
       }
     }
   }, []);
+
+  if(isFetching) {
+    return <Loader />
+  }
 
   return (
     <div className="single-package-main">

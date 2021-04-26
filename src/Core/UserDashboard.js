@@ -4,6 +4,7 @@ import firebase from "firebase";
 import { Link, Redirect } from "react-router-dom";
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
+import Loader from "../Components/Loader"
 
 function UserDashboard() {
   const [userData, setUserData] = useState({
@@ -15,12 +16,14 @@ function UserDashboard() {
   const auth = firebase.auth();
   const db = firebase.firestore();
   const [isLoggedOut, setLoggedOut] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     getUser();
   }, []);
 
   const getUser = () => {
+    setIsLoading(true);
     auth.onAuthStateChanged((userCredentials) => {
       const uid = userCredentials.uid;
       db.collection("Users")
@@ -28,7 +31,7 @@ function UserDashboard() {
         .get()
         .then((snapshot) => {
           const data = snapshot.data();
-          setUserData((prev) => {
+          if(data){setUserData((prev) => {
             return {
               ...prev,
               name: data.name,
@@ -36,7 +39,8 @@ function UserDashboard() {
               phone: data.phone,
               address: data.address,
             };
-          });
+          });}
+          setIsLoading(false)
         });
     });
   };
@@ -46,6 +50,10 @@ function UserDashboard() {
       setLoggedOut(true);
     });
   };
+
+  if(isLoading) {
+    return <Loader />
+  }
 
   return (
     <div>
