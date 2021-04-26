@@ -204,3 +204,20 @@
 .abs-col4 img:hover{
   transform:translateX(-40px);
 }
+.teams-row.row{
+  margin-left: 75px;
+  margin-right: 75px;
+  margin-bottom: 40px;
+}
+
+.carditeam{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+@media(max-width:500px){
+  .teams-row.row{
+    margin-left: 15px;
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
+}
