@@ -10,6 +10,10 @@ import Headings from "./Headings";
 import price from "../Assets/dollar.png";
 import placeholder from "../Assets/placeholder.png";
 import { Row, Col, Container } from "react-bootstrap";
+import Card from "../Components/Card3"
+import Varish from "../Assets/varish.jpg"
+import Shivani from "../Assets/shivani.jpg"
+import Priyankar from "../Assets/priyankar.JPG"
 
 const Screen = () => {
   let overlay = useRef(null);
@@ -291,6 +295,36 @@ const Screen = () => {
           ></path>
         </svg>
       </div>
+      </div>
+      <Headings text = "Our Team"/>
+      <Row className = "teams-row">
+      <Col className = "carditeam">
+      <Card 
+            headi ="Varish"
+            image = {Varish}
+            text="Lead Something.."/>
+      </Col>
+      <Col className = "carditeam">
+      <Card 
+      headi ="Shivani"
+      image = {Shivani}
+      text="Head Spmething..."/>
+      </Col>
+      <Col className = "carditeam">
+      <Card 
+      headi ="Priyankar"
+      image = {Priyankar}
+      text="Founder..."/>
+      </Col>
+      <Col className = "carditeam">
+      <Card 
+      headi ="Sparsh"
+      image = {Priyankar}
+      text="Co Lead...."/>
+      </Col>
+      
+      </Row>
+  
       <Footer />
     </div>
   );
