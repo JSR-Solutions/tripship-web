@@ -4,7 +4,7 @@ import "./Loader.css";
 
 const Loader = () => {
   return (
-    <div>
+    <div className="loader-m">
       <svg
         className="svg"
         width="100px"

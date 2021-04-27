@@ -10,10 +10,12 @@ import Headings from "./Headings";
 import price from "../Assets/dollar.png";
 import placeholder from "../Assets/placeholder.png";
 import { Row, Col, Container } from "react-bootstrap";
-import Card from "../Components/Card3"
-import Varish from "../Assets/varish.jpg"
-import Shivani from "../Assets/shivani.jpg"
-import Priyankar from "../Assets/priyankar.JPG"
+import Card from "../Components/Card3";
+import Varish from "../Assets/varish.jpg";
+import Shivani from "../Assets/shivani.jpg";
+import Priyankar from "../Assets/priyankar.JPG";
+import Vaibhav from "../Assets/vaibhav.JPG";
+import Sparsh from "../Assets/sparsh.heic";
 
 const Screen = () => {
   let overlay = useRef(null);
@@ -203,26 +205,28 @@ const Screen = () => {
 
         <div ref={section_one} className="section-one">
           <div ref={section_one_content} className="sec-one-content">
-           <Container> <Row>
-              <Col xs={12} md={6} lg={6}>
-                <h2>KYA HAAL HAIN?</h2>
-                <p>
-                  On accompanies his father, Lord Eddard Stark,
-                  <br /> his brothers Robb and Bran, his father's ward <br />
-                  Theon Greyjoy, and others from Winterfell to
-                  <br /> the execution of Gared, a deserter way back
-                  <br /> to Winterfell, Jon and Robb race ahead and <br />
-                  find a litter of direwolf pups.
-                </p>
-              </Col>
-              <Col xs={12} md={6} lg={6}>
-                <div className="ellipse-container-2">
-                  <div className="ellipse2 thin2"></div>
-                  <div className="ellipse2 thick2"></div>
-                  <div className="ellipse2 yellow2"></div>
-                </div>
-              </Col>
-            </Row>
+            <Container>
+              {" "}
+              <Row>
+                <Col xs={12} md={6} lg={6}>
+                  <h2>KYA HAAL HAIN?</h2>
+                  <p>
+                    On accompanies his father, Lord Eddard Stark,
+                    <br /> his brothers Robb and Bran, his father's ward <br />
+                    Theon Greyjoy, and others from Winterfell to
+                    <br /> the execution of Gared, a deserter way back
+                    <br /> to Winterfell, Jon and Robb race ahead and <br />
+                    find a litter of direwolf pups.
+                  </p>
+                </Col>
+                <Col xs={12} md={6} lg={6}>
+                  <div className="ellipse-container-2">
+                    <div className="ellipse2 thin2"></div>
+                    <div className="ellipse2 thick2"></div>
+                    <div className="ellipse2 yellow2"></div>
+                  </div>
+                </Col>
+              </Row>
             </Container>
           </div>
         </div>
@@ -294,37 +298,58 @@ const Screen = () => {
             d="M0,96L1440,160L1440,0L0,0Z"
           ></path>
         </svg>
+        <div className="our-team">
+        <Headings text="Our Team" />
+          <Container>
+            <Row>
+              <Col className="carditeam" xs={12} md={6} lg={4}>
+                <Card headi="Varish" image={Varish} text="Founder and CEO" />
+              </Col>
+
+              <Col xs={12} md={6} lg={8}>
+                <h2>Varish Saifi</h2>
+                <p>xyz</p>
+              </Col>
+            </Row>
+            <br/><br/><br/>
+            <Row>
+              <Col xs={12} md={6} lg={8}>
+              <h2>Shivani Singh</h2>
+                <p>xyz</p>
+              </Col>
+
+              <Col className="carditeam" xs={12} md={6} lg={4}>
+                <Card
+                  headi="Shivani"
+                  image={Shivani}
+                  text="Cofounder and Accounts Head"
+                />
+              </Col>
+            </Row>
+          </Container>
+          <br/><br/><br/>
+          <Row className="teams-row">
+            <Col className="carditeam">
+              <Card
+                headi="Abhishek"
+                image={Priyankar}
+                text="Trip Coordination Head"
+              />
+            </Col>
+            <Col className="carditeam">
+              <Card headi="Sparsh" image={Sparsh} text="Managing Director" />
+            </Col>
+            <Col className="carditeam">
+              <Card
+                headi="Vaibhav"
+                image={Vaibhav}
+                text="Operations and Sales Head"
+              />
+            </Col>
+          </Row>
+          <br/><br/><br/>
+        </div>
       </div>
-      </div>
-      <Headings text = "Our Team"/>
-      <Row className = "teams-row">
-      <Col className = "carditeam">
-      <Card 
-            headi ="Varish"
-            image = {Varish}
-            text="Lead Something.."/>
-      </Col>
-      <Col className = "carditeam">
-      <Card 
-      headi ="Shivani"
-      image = {Shivani}
-      text="Head Spmething..."/>
-      </Col>
-      <Col className = "carditeam">
-      <Card 
-      headi ="Priyankar"
-      image = {Priyankar}
-      text="Founder..."/>
-      </Col>
-      <Col className = "carditeam">
-      <Card 
-      headi ="Sparsh"
-      image = {Priyankar}
-      text="Co Lead...."/>
-      </Col>
-      
-      </Row>
-  
       <Footer />
     </div>
   );
