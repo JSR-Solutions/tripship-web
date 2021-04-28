@@ -136,12 +136,14 @@ const Header = ({ history }) => {
                     >
                       <li>Home</li>
                     </Link>
-                    <a
-                      className="deconone id-link"
-                      href="#trending"
+                    <Link
+                      className="deconone"
+                      to="/packages/Trending Trips"
+                      style={isActive(history, "/packages/Trending Trips")}
+                      onClick={changeScreen}
                     >
                       <li>Trending Trips</li>
-                    </a>
+                    </Link>
                     <Link
                       className="deconone"
                       to="/packages/Backpacking Trips"
