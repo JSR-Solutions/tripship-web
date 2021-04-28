@@ -98,8 +98,7 @@ const Header = ({ history }) => {
                 <div className="logo-serach-head">
                   <div className="header-main32">
                     <Link to="/" style={isActive(history, "/")}>
-                      {/*<img src={Logo} alt='logo' />*/}
-                      <h3>Tripship</h3>
+                      <img src={Logo} alt='logo' />
                     </Link>
                   </div>
                   <div className="header-main32-input">
@@ -114,16 +113,15 @@ const Header = ({ history }) => {
                   <ul>
                     <li>
                       <FiPhone />{" "}
-                      <a href="tel:+91-7894561230">+91-7894561320</a>
+                      <a href="tel:+91-7042640918">+91-7042640918</a>
                     </li>
                     <li>
-                      <FiPhone />{" "}
-                      <a href="tel:+91-7894561230">+91-7894561320</a>
+                      <FiPhone /> <a href="tel:+91-882655793">+91-882655793</a>
                     </li>
                     <li>
                       <FiMail />{" "}
-                      <a href="mailto:jsrsolution.work@gmail.com">
-                        tripship.travel@gmail.com
+                      <a href="mailto:info.tripshrip@gmail.com">
+                        info.tripshrip@gmail.com
                       </a>
                     </li>
                   </ul>
@@ -137,6 +135,14 @@ const Header = ({ history }) => {
                       onClick={changeScreen}
                     >
                       <li>Home</li>
+                    </Link>
+                    <Link
+                      className="deconone"
+                      to="/packages/Trending Trips"
+                      style={isActive(history, "/packages/Trending Trips")}
+                      onClick={changeScreen}
+                    >
+                      <li>Trending Trips</li>
                     </Link>
                     <Link
                       className="deconone"

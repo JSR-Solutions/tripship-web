@@ -423,6 +423,7 @@ function EditPackage(props) {
                     required
                     value={packageType}
                   >
+                    <option>Trending Trips</option>
                     <option>Treks</option>
                     <option>Backpacking Trips</option>
                     <option>Bike Trips</option>

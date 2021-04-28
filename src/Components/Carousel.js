@@ -60,7 +60,7 @@ function CardCarousel(props) {
 
   return (
     <div className="parentcarouel">
-      <Heas text="Featured Trips" />
+      <Heas text="Trending Trips" />
       <Carousel
         swipeable={false}
         draggable={false}

@@ -5,6 +5,7 @@
 
 .mb10 {
     text-align: left;
+    padding-right: 24px;
 }
 
 footer {
@@ -12,6 +13,10 @@ footer {
     background-color: black;
     min-height: 250px;
     padding: 10px 0px 25px 0px;
+}
+
+.footer {
+    padding: 40px;
 }
 
 .footer2 {
