@@ -1,5 +1,6 @@
 import React from "react";
-import { Col, Row, Container } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "../Styles/Footer.css";
 import { IoLogoFacebook, IoLogoTwitter, IoLogoWhatsapp } from "react-icons/io";
 import { AiFillInstagram } from "react-icons/ai";
@@ -8,172 +9,154 @@ const Footer = () => {
   return (
     <div>
       <footer class="footer">
-        <Container>
-          <Row>
-            <Col>
-              <h5 className="headin5_amrc col_white_amrc pt2">About Us</h5>
+        <Row>
+          <Col>
+            <h5 className="headin5_amrc col_white_amrc pt2">About Us</h5>
 
-              <p className="mb10">
-                We at TripShrip are a modern travel community that provides end
-                to end travel packages in India and abroad. We design the best
-                travel itineraries that encourage group traveling for
-                like-minded people. Our services include road trips, trekking
-                expeditions, corporate trips, and customized tour packages. On
-                our trips, we ensure hassle-free traveling, top-notch
-                accommodation and guided sightseeing that too in a budget that
-                won’t burn a hole in your pocket. Just give us your dates and be
-                ready to experience traveling like never before.
-              </p>
-              <p className="mb10">
-                <i className="fa fa-location-arrow"></i> address{" "}
-              </p>
-              <p className="mb10">
-                <i className="fa fa-phone"></i> 0123456790{" "}
-              </p>
-              <p className="mb10">
-                <i className="fa fa fa-envelope"></i> info@example.com{" "}
-              </p>
-            </Col>
-            <Col>
-              <br></br>
-            </Col>
+            <p className="mb10">
+              TRIPSHRIP is a community of travel enthusiasts who are passionate
+              about adventure. We at TRIPSHRIP work towards creating an
+              environment for thrill seekers by providing them memorable
+              experiences. Our services include road trips, trekking
+              expeditions, backpacking trips, corporate trips, and customized
+              tour packages and that too at a very reasonable rate. We want to
+              make adventure affordable for everyone because we believe in
+              'Adventure for all, all for Adventure'. We keep on surprising our
+              family members with new experiences because thats what they expect
+              us to do. SO what are you waiting for, join us and be a part of
+              this evergrowing family.
+            </p>
+            <p className="mb10">
+              <i className="fa fa-location-arrow"></i> address{" "}
+            </p>
+            <p className="mb10">
+              <i className="fa fa-phone"></i> +91-7042640918{" "}
+            </p>
+            <p className="mb10">
+              <i className="fa fa fa-envelope"></i> info.tripshrip@gmail.com{" "}
+            </p>
+          </Col>
 
-            <Col>
-              <h5 className="headin5_amrc col_white_amrc pt2">Weekend Trips</h5>
+          <Col>
+            <h5 className="headin5_amrc col_white_amrc pt2">Trending Trips</h5>
 
-              <ul className="footer_ul_amrc">
-                <li>
-                  <a href="https://www.wanderon.in/">Image Rectoucing</a>
-                </li>
-                <li>
-                  <a href="https://www.wanderon.in/">Clipping Path</a>
-                </li>
-                <li>
-                  <a href="https://www.wanderon.in/">Hollow Man Montage</a>
-                </li>
-                <li>
-                  <a href="https://www.wanderon.in/">Ebay & Amazon</a>
-                </li>
-                <li>
-                  <a href="https://www.wanderon.in/">Hair Masking/Clipping</a>
-                </li>
-                <li>
-                  <a href="https://www.wanderon.in/">Image Cropping</a>
-                </li>
-              </ul>
+            <ul className="footer_ul_amrc">
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+            </ul>
 
-              <h5 className="headin5_amrc col_white_amrc pt2">
-                Himalayan Escapades
-              </h5>
+            <h5 className="headin5_amrc col_white_amrc pt2">
+              Backpacking Trips
+            </h5>
 
-              <ul className="footer_ul_amrc">
-                <li>
-                  <a href="https://www.wanderon.in/">Image Rectoucing</a>
-                </li>
-                <li>
-                  <a href="https://www.wanderon.in/">Clipping Path</a>
-                </li>
-                <li>
-                  <a href="https://www.wanderon.in/">Hollow Man Montage</a>
-                </li>
-                <li>
-                  <a href="https://www.wanderon.in/">Ebay & Amazon</a>
-                </li>
-                <li>
-                  <a href="https://www.wanderon.in/">Hair Masking/Clipping</a>
-                </li>
-                <li>
-                  <a href="https://www.wanderon.in/">Image Cropping</a>
-                </li>
-              </ul>
-            </Col>
+            <ul className="footer_ul_amrc">
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+            </ul>
+          </Col>
 
-            <Col>
-              <h5 className="headin5_amrc col_white_amrc pt2">Blogs</h5>
+          <Col>
+            <h5 className="headin5_amrc col_white_amrc pt2">Bike Trips</h5>
 
-              <ul className="footer_ul_amrc">
-                <li>
-                  <a href="https://www.wanderon.in/">Remove Background</a>
-                </li>
-                <li>
-                  <a href="https://www.wanderon.in/">
-                    Shadows & Mirror Reflection
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.wanderon.in/">Logo Design</a>
-                </li>
-                <li>
-                  <a href="https://www.wanderon.in/">Vectorization</a>
-                </li>
-                <li>
-                  <a href="https://www.wanderon.in/">Hair Masking/Clipping</a>
-                </li>
-                <li>
-                  <a href="https://www.wanderon.in/">Image Cropping</a>
-                </li>
-              </ul>
+            <ul className="footer_ul_amrc">
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+            </ul>
 
-              <h5 className="headin5_amrc col_white_amrc pt2">
-                Backpacking Trips
-              </h5>
+            <h5 className="headin5_amrc col_white_amrc pt2">Treks</h5>
 
-              <ul className="footer_ul_amrc">
-                <li>
-                  <a href="https://www.wanderon.in/">Remove Background</a>
-                </li>
-                <li>
-                  <a href="https://www.wanderon.in/">
-                    Shadows & Mirror Reflection
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.wanderon.in/">Logo Design</a>
-                </li>
-                <li>
-                  <a href="https://www.wanderon.in/">Vectorization</a>
-                </li>
-                <li>
-                  <a href="https://www.wanderon.in/">Hair Masking/Clipping</a>
-                </li>
-                <li>
-                  <a href="https://www.wanderon.in/">Image Cropping</a>
-                </li>
-              </ul>
-            </Col>
+            <ul className="footer_ul_amrc">
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+            </ul>
+          </Col>
 
-            <Col>
-              <h5 class="headin5_amrc col_white_amrc pt2">Quick Links</h5>
+          <Col>
+            <h5 class="headin5_amrc col_white_amrc pt2">Quick Links</h5>
 
-              <ul class="footer_ul2_amrc">
-                <li>
-                  <a href="https://www.wanderon.in/">
-                    <i className="fab fa-twitter fleft padding-right"></i>{" "}
-                  </a>
-                  <p>
-                    <a href="https://www.wanderon.in/">Privacy Policy</a>
-                  </p>
-                </li>
-                <li>
-                  <a href="https://www.wanderon.in/">
-                    <i className="fab fa-twitter fleft padding-right"></i>{" "}
-                  </a>
-                  <p>
-                    <a href="https://www.wanderon.in/">Cancellation Policy</a>
-                  </p>
-                </li>
-                <li>
-                  <a href="https://www.wanderon.in/">
-                    <i className="fab fa-twitter fleft padding-right"></i>{" "}
-                  </a>
-                  <p>
-                    <a href="https://www.wanderon.in/">Terms and Conditions</a>
-                  </p>
-                </li>
-              </ul>
-            </Col>
-          </Row>
-        </Container>
+            <ul class="footer_ul2_amrc">
+              <li>
+                <p>
+                  <Link to="/custom-package">Customize your trip</Link>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <Link to="/aboutus">About Us</Link>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <Link to="/contact-us">Contact Us</Link>
+                </p>
+              </li>
+            </ul>
+          </Col>
+        </Row>
       </footer>
       <br></br>
       <br></br>
@@ -184,32 +167,26 @@ const Footer = () => {
         <div className="xyz">
           <ul className="foote_bottom_ul_amrc">
             <li>
-              <a href="https://www.wanderon.in/">Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <a href="https://www.wanderon.in/">About Us</a>
+              <Link to="/aboutus">About Us</Link>
             </li>
             <li>
-              <a href="https://www.wanderon.in/">Packages</a>
+              <Link to="/contact-us">Contact Us</Link>
             </li>
             <li>
-              <a href="https://www.wanderon.in/">Pricing</a>
-            </li>
-            <li>
-              <a href="https://www.wanderon.in/">Blog</a>
-            </li>
-            <li>
-              <a href="https://www.wanderon.in/">Contact Us</a>
+              <Link to="/custom-package">Custom Trip</Link>
             </li>
           </ul>
 
           <p class="text-center">
-            <div className="black">Company Name</div>
+            <div className="black">Trip Shrip</div>
           </p>
 
           <ul className="social_footer_ul">
             <li>
-              <a href="https://www.wanderon.in/">
+              <a href="https://www.facebook.com/tripshrip2309/">
                 <IoLogoFacebook />
               </a>
             </li>
@@ -224,7 +201,7 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="https://www.wanderon.in/">
+              <a href="https://instagram.com/tripshrip_">
                 <AiFillInstagram />
               </a>
             </li>

@@ -15,13 +15,7 @@ const Landingscreen = () => {
                     <input placeholder="Enter Name"/><br />
                     <input placeholder="Enter 10 Digit Mobile Number"/><br />
                     <button className="button1">Plan My Trip</button><br />
-                    <button className="button2">Check Group Departure</button>
                     </div>
-                </div>
-                <div className="landing-page-images">
-                    <div className="landing-page-images1"><img src={Google} /></div>
-                    <div className="landing-page-images2"><img src={Tcwin} /></div>
-                    <div className="landing-page-images3"><img src={Facebook} /></div>
                 </div>
             </div>
         </div>
