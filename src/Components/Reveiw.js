@@ -33,7 +33,9 @@ function Review() {
           return (
             <Carousel.Item>
               <div>
-                <img className="review_img" src={dat.imgUrl} />
+                <div className="img-container">
+                  <img className="review_img" src={dat.imgUrl} />
+                </div>
                 <h2>{dat.name}</h2>
                 <div className="review_p">
                   <p>{dat.review}</p>
@@ -47,3 +49,4 @@ function Review() {
   );
 }
 export default Review;
+

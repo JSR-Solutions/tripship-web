@@ -90,8 +90,8 @@ function CardCarousel(props) {
               <Card
                 date="5"
 
-                headi={pckg.name}
-                text={pckg.overviews && pckg.overviews[0].substring(0, 80)}
+                headi={pckg.data.name}
+                text={pckg.data.overviews && pckg.data.overviews[0].substring(0, 80)}
 
                 food="0"
                 stay="1"
