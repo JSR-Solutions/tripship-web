@@ -103,10 +103,6 @@ const Singlepackage = (props) => {
                       <h3>{pack.name}</h3>
                       <hr />
                       <h5>
-                        <GiNetworkBars className="single-pck-1-row-icon" />
-                        Level - {pack.duration}
-                      </h5>
-                      <h5>
                         <AiOutlineSafetyCertificate className="single-pck-1-row-icon" />
                         Package Type - {pack.packageType}
                       </h5>
