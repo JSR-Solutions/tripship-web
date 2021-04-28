@@ -10,12 +10,12 @@ import Headings from "./Headings";
 import price from "../Assets/dollar.png";
 import placeholder from "../Assets/placeholder.png";
 import { Row, Col, Container } from "react-bootstrap";
-import Card from "../Components/Card3";
+import Card from "../Components/Card4";
 import Varish from "../Assets/varish.jpg";
 import Shivani from "../Assets/shivani.jpg";
 import Priyankar from "../Assets/priyankar.JPG";
 import Vaibhav from "../Assets/vaibhav.JPG";
-import Sparsh from "../Assets/sparsh.heic";
+import Sparsh from "../Assets/sparsh.jpg";
 
 const Screen = () => {
   let overlay = useRef(null);
@@ -299,53 +299,39 @@ const Screen = () => {
           ></path>
         </svg>
         <div className="our-team">
-        <Headings text="Our Team" />
+        <Headings text="Founders" />
           <Container>
             <Row>
-              <Col className="carditeam" xs={12} md={6} lg={4}>
-                <Card headi="Varish" image={Varish} text="Founder and CEO" />
+              <Col className="carditeam" xs={12} md={6} lg={6}>
+                <Card name="Varish Saifi" img={Varish} detail="Founder and CEO" />
               </Col>
-
-              <Col xs={12} md={6} lg={8}>
-                <h2>Varish Saifi</h2>
-                <p>xyz</p>
-              </Col>
-            </Row>
-            <br/><br/><br/>
-            <Row>
-              <Col xs={12} md={6} lg={8}>
-              <h2>Shivani Singh</h2>
-                <p>xyz</p>
-              </Col>
-
-              <Col className="carditeam" xs={12} md={6} lg={4}>
+              <Col className="carditeam" xs={12} md={6} lg={6}>
                 <Card
-                  headi="Shivani"
-                  image={Shivani}
-                  text="Cofounder and Accounts Head"
+                  name="Shivani SSr"
+                  img={Shivani}
+                  detail="Cofounder and CFO"
                 />
               </Col>
+
+              
             </Row>
+            <br/><br/><br/>
+            <Headings text="Our Team" /> 
           </Container>
           <br/><br/><br/>
           <Row className="teams-row">
-            <Col className="carditeam">
-              <Card
-                headi="Abhishek"
-                image={Priyankar}
-                text="Trip Coordination Head"
-              />
-            </Col>
-            <Col className="carditeam">
-              <Card headi="Sparsh" image={Sparsh} text="Managing Director" />
-            </Col>
-            <Col className="carditeam">
-              <Card
-                headi="Vaibhav"
-                image={Vaibhav}
-                text="Operations and Sales Head"
-              />
-            </Col>
+          <Col className="carditeam" xs={12} md={6} lg={3}>
+          <Card name="Sparsh Vij" img={Sparsh} detail="Managing Director" />
+        </Col>
+        <Col className="carditeam" xs={12} md={6} lg={3}>
+                <Card name="Sajid " img={Priyankar} detail="COO" />
+              </Col>
+              <Col className="carditeam" xs={12} md={6} lg={3}>
+                <Card name="Vaibhav" img={Vaibhav} detail="Operations and Sales" />
+              </Col>
+              <Col className="carditeam" xs={12} md={6} lg={3}>
+                <Card name="Priyankar" img={Priyankar} detail="Tour Manager" />
+              </Col>
           </Row>
           <br/><br/><br/>
         </div>
