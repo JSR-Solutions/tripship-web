@@ -9,6 +9,7 @@ import firebase from "firebase";
 
 import $ from "jquery";
 import Spinner from "react-bootstrap/Spinner";
+import { Row } from "react-bootstrap";
 
 const responsive = {
   desktop: {
@@ -79,22 +80,26 @@ function CardCarousel(props) {
         itemClass="carousel-item-padding-40-px"
         className="cari"
       >
-        <div>
-          {trekkingPackages.map((pckg) => {
-            return (
+        {trekkingPackages.map((pckg) => {
+          console.log(pckg);
+          return (
+            <Link
+              className="package-card"
+              to={`/packages/Trending Trips/${pckg._id}`}
+            >
               <Card
                 date="5"
-                headi={pckg.name}
-                text={pckg.overviews[0].substring(0, 80)}
+                headi={pckg.data.name}
+                text={pckg.data.overviews[0].substring(0, 80)}
                 food="0"
                 stay="1"
                 sight="1"
                 travel="1"
                 image={pckg.imageUrl}
               />
-            );
-          })}
-        </div>
+            </Link>
+          );
+        })}
       </Carousel>
     </div>
   );
