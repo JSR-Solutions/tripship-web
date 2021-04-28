@@ -68,6 +68,12 @@
 
 
 /*Header 2nd row*/
+
+.id-link {
+    text-decoration: none !important;
+    color: #212529 !important;
+}
+
 .header-main3{
     height: 61px;
     background-color: white;
