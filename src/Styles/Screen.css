@@ -170,6 +170,7 @@
   0% {
     transform: rotate(-45deg);
   }
+
   100% {
     transform: rotate(-405deg);
   }
@@ -287,12 +288,12 @@
   position: relative;
 }
 
-.sec-one-content h2{
-font-size: 4em;
-margin-bottom: 0;
+.sec-one-content h2 {
+  font-size: 4em;
+  margin-bottom: 0;
 }
 
-.sec-one-content p{
+.sec-one-content p {
   font-size: 1.2em;
   margin-left: 40px;
 }
@@ -349,47 +350,47 @@ margin-bottom: 0;
 
 
 @media screen and (max-width:1225px) {
-  .logo{
-    display:none !important;
-  }
-
-  .logo h1{
+  .logo {
     display: none !important;
   }
 
-  .logo span{
+  .logo h1 {
     display: none !important;
   }
 
-  .menu-links{
-    display : none !important;
-  }
-
-  .menu-links ul{
+  .logo span {
     display: none !important;
   }
 
-  .menu-links ul li{
+  .menu-links {
     display: none !important;
   }
 
-  .scrolldown{
+  .menu-links ul {
     display: none !important;
   }
 
-  .scrolldown::before{
+  .menu-links ul li {
     display: none !important;
   }
 
-  .watchnow{
+  .scrolldown {
     display: none !important;
   }
 
-  .watchnow a{
+  .scrolldown::before {
     display: none !important;
   }
 
-  .fa-circle{
+  .watchnow {
+    display: none !important;
+  }
+
+  .watchnow a {
+    display: none !important;
+  }
+
+  .fa-circle {
     display: none !important;
   }
 
@@ -401,7 +402,7 @@ margin-bottom: 0;
     height: 508px !important;
     position: absolute;
     top: 80% !important;
-    background: url("../Assets/mountains.png") no-repeat;
+    background: url("../Assets/logo.jfif") no-repeat;
     background-position: 50%;
     background-size: 70%;
     left: 50%;
@@ -459,7 +460,7 @@ margin-bottom: 0;
     z-index: -1;
   }
 
-  .aboutus-sec1a{
+  .aboutus-sec1a {
     padding-top: 200px !important;
   }
 
@@ -468,47 +469,47 @@ margin-bottom: 0;
 @media screen and (max-width:576px) {
 
 
-  .logo{
-    display:none !important;
-  }
-
-  .logo h1{
+  .logo {
     display: none !important;
   }
 
-  .logo span{
+  .logo h1 {
     display: none !important;
   }
 
-  .menu-links{
-    display : none !important;
-  }
-
-  .menu-links ul{
+  .logo span {
     display: none !important;
   }
 
-  .menu-links ul li{
+  .menu-links {
     display: none !important;
   }
 
-  .scrolldown{
+  .menu-links ul {
     display: none !important;
   }
 
-  .scrolldown::before{
+  .menu-links ul li {
     display: none !important;
   }
 
-  .watchnow{
+  .scrolldown {
     display: none !important;
   }
 
-  .watchnow a{
+  .scrolldown::before {
     display: none !important;
   }
 
-  .fa-circle{
+  .watchnow {
+    display: none !important;
+  }
+
+  .watchnow a {
+    display: none !important;
+  }
+
+  .fa-circle {
     display: none !important;
   }
 
@@ -517,7 +518,8 @@ margin-bottom: 0;
     height: 408px !important;
     position: absolute;
     top: 80% !important;
-    background: url("../Assets/mountains.png") no-repeat;
+    background: url("../Assets/logo.jfif") no-repeat;
+
     background-position: 50%;
     background-size: 70%;
     left: 50%;
@@ -541,28 +543,28 @@ margin-bottom: 0;
   }
 
   .circle1,
-.circle2{
-  display: none !important;
-}
+  .circle2 {
+    display: none !important;
+  }
 
-.section-one {
-  height: auto !important;
-  text-align: left;
-  background: white;
-  color: #222;
-  position: relative;
-}
+  .section-one {
+    height: auto !important;
+    text-align: left;
+    background: white;
+    color: #222;
+    position: relative;
+  }
 
-.sec-one-content p{
-  font-size: 1em !important;
-  margin: 10px !important;
-  color: #222 !important;
-  font-weight: 500 !important;
-}
+  .sec-one-content p {
+    font-size: 1em !important;
+    margin: 10px !important;
+    color: #222 !important;
+    font-weight: 500 !important;
+  }
 
-.sec-one-content h2{
-  font-size: 3.5em !important;
-  margin-bottom: 80px !important;
+  .sec-one-content h2 {
+    font-size: 3.5em !important;
+    margin-bottom: 80px !important;
   }
 
   .ellipse-container-2 {
@@ -580,11 +582,12 @@ margin-bottom: 0;
     z-index: -1;
   }
 
-  .aboutus-sec1a{
+  .aboutus-sec1a {
     padding-top: 300px;
   }
 
 }
+
 @media screen and (max-width:476px) {
   .text {
     position: absolute;
@@ -619,7 +622,8 @@ margin-bottom: 0;
     height: 328px !important;
     position: absolute;
     top: 80% !important;
-    background: url("../Assets/mountains.png") no-repeat;
+    background: url("../Assets/logo.jfif") no-repeat;
+
     background-position: 50%;
     background-size: 70%;
     left: 50%;
@@ -630,4 +634,3 @@ margin-bottom: 0;
   }
 
 }
-
