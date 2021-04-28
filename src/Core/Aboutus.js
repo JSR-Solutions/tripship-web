@@ -16,6 +16,7 @@ import Shivani from "../Assets/shivani.jpg";
 import Priyankar from "../Assets/priyankar.JPG";
 import Vaibhav from "../Assets/vaibhav.JPG";
 import Sparsh from "../Assets/sparsh.jpg";
+import Sajid from "../Assets/sajid.jpg";
 
 const Screen = () => {
   let overlay = useRef(null);
@@ -209,14 +210,20 @@ const Screen = () => {
               {" "}
               <Row>
                 <Col xs={12} md={6} lg={6}>
-                  <h2>KYA HAAL HAIN?</h2>
+                  <h2>ABOUT TRIPSHRIP</h2>
                   <p>
-                    On accompanies his father, Lord Eddard Stark,
-                    <br /> his brothers Robb and Bran, his father's ward <br />
-                    Theon Greyjoy, and others from Winterfell to
-                    <br /> the execution of Gared, a deserter way back
-                    <br /> to Winterfell, Jon and Robb race ahead and <br />
-                    find a litter of direwolf pups.
+                    TRIPSHRIP is a community of travel enthusiasts who are
+                    passionate about adventure. We at TRIPSHRIP work towards
+                    creating an environment for thrill seekers by providing them
+                    memorable experiences. Our services include road trips,
+                    trekking expeditions, backpacking trips, corporate trips,
+                    and customized tour packages and that too at a very
+                    reasonable rate. We want to make adventure affordable for
+                    everyone because we believe in 'Adventure for all, all for
+                    Adventure'. We keep on surprising our family members with
+                    new experiences because thats what they expect us to do. SO
+                    what are you waiting for, join us and be a part of this
+                    evergrowing family.
                   </p>
                 </Col>
                 <Col xs={12} md={6} lg={6}>
@@ -299,41 +306,53 @@ const Screen = () => {
           ></path>
         </svg>
         <div className="our-team">
-        <Headings text="Founders" />
+          <Headings text="Founders" />
           <Container>
             <Row>
               <Col className="carditeam" xs={12} md={6} lg={6}>
-                <Card name="Varish Saifi" img={Varish} detail="Founder and CEO" />
+                <Card
+                  name="Varish Saifi"
+                  img={Varish}
+                  detail="Founder and CEO"
+                />
               </Col>
               <Col className="carditeam" xs={12} md={6} lg={6}>
                 <Card
-                  name="Shivani SSr"
+                  name="Shivani SSR"
                   img={Shivani}
                   detail="Cofounder and CFO"
                 />
               </Col>
-
-              
             </Row>
-            <br/><br/><br/>
-            <Headings text="Our Team" /> 
+            <br />
+            <br />
+            <br />
+            <Headings text="Our Team" />
           </Container>
-          <br/><br/><br/>
+          <br />
+          <br />
+          <br />
           <Row className="teams-row">
-          <Col className="carditeam" xs={12} md={6} lg={6} xl={3}>
-          <Card name="Sparsh Vij" img={Sparsh} detail="Managing Director" />
-        </Col>
-        <Col className="carditeam" xs={12} md={6} lg={6} xl={3}>
-                <Card name="Sajid " img={Priyankar} detail="COO" />
-              </Col>
-              <Col className="carditeam" xs={12} md={6} lg={6} xl={3}>
-                <Card name="Vaibhav" img={Vaibhav} detail="Operations and Sales" />
-              </Col>
-              <Col className="carditeam" xs={12} md={6} lg={6} xl={3}>
-                <Card name="Priyankar" img={Priyankar} detail="Tour Manager" />
-              </Col>
+            <Col className="carditeam" xs={12} md={6} lg={6} xl={3}>
+              <Card name="Sajid " img={Sajid} detail="COO" />
+            </Col>
+            <Col className="carditeam" xs={12} md={6} lg={6} xl={3}>
+              <Card name="Sparsh Vij" img={Sparsh} detail="Managing Director" />
+            </Col>
+            <Col className="carditeam" xs={12} md={6} lg={6} xl={3}>
+              <Card
+                name="Vaibhav"
+                img={Vaibhav}
+                detail="Operations and Sales"
+              />
+            </Col>
+            <Col className="carditeam" xs={12} md={6} lg={6} xl={3}>
+              <Card name="Priyankar" img={Priyankar} detail="Tour Manager" />
+            </Col>
           </Row>
-          <br/><br/><br/>
+          <br />
+          <br />
+          <br />
         </div>
       </div>
       <Footer />

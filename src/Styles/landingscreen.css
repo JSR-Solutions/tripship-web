@@ -89,4 +89,6 @@
 }
 .landing-page-images3{
     margin: auto;
+    margin-left: 48px;
+    transform: scale(1.125);
 }
