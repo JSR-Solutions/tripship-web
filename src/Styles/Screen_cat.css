@@ -404,7 +404,7 @@
   }
 
   .text3 .title3 {
-    font-size: 70px !important;
+    font-size: 50px !important;
     padding-top: 180px !important;
   }
 
@@ -419,5 +419,34 @@
 
   
 
+}
+
+@media screen and (max-width:476px) {
+  .text3 {
+    position: absolute;
+    top: 25%;
+    right: 50px !important;
+    transform: translateY(-50%);
+    text-align: right !important;
+  }
+
+  .text3 .title3 {
+    font-size: 50px !important;
+    padding-top: 160px !important;
+  }
+  .ellipse-container {
+    width: 308px !important;
+    height: 308px !important;
+    position: absolute;
+    top: 80% !important;
+    background: url("../Assets/mountains.png") no-repeat;
+    background-position: 50%;
+    background-size: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    margin: 0 auto;
+    z-index: -1;
+  }
 }
 
