@@ -3,15 +3,22 @@
   font-family: "agency fb";
   overflow: hidden;
 }
-
+.wrapper{
+  width: 100%;
+  overflow: hidden;
+}
 .nav {
   width: 300px;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  /* background-color: aqua; */
 }
-
+.category-screen-main{
+  width: 100% !important;
+  overflow: hidden !important;
+}
 .logo {
   flex: 0 0 50%;
   background: #ffeb00;
@@ -24,13 +31,14 @@
 .logo h1 {
   font-weight: 300;
   text-transform: uppercase;
-  font-size: 18px;
-  line-height: 2;
+  /* font-size: 18px;
+  line-height: 2; */
+  /* background-color: aqua; */
 }
 
 .logo span {
   font-size: 40px;
-  line-height: 1;
+  /* line-height: 1; */
 }
 
 .menu-links {
@@ -39,6 +47,7 @@
   justify-content: flex-end;
   text-align: right;
   padding-top: 50px;
+
 }
 
 .menu-links ul {
@@ -77,22 +86,23 @@
 
 .text3 {
   position: absolute;
-  top: 25%;
-  right: 180px;
+  top: 28%;
+  right: 8%;
   transform: translateY(-50%);
   text-align: right;
   color: #494949;
 }
 
 .text3 .title3 {
-  font-size: 100px;
+  /* font-size: 100px; */
+  font-size: 95px;
   padding-top: 80px;
-  text-transform: lowercase;
+  text-transform: capitalize;
 }
 
 .watchnow {
   position: absolute;
-  top: 60%;
+  top: 63%;
   right: 0;
   transform: translateY(-50%);
   background: #ffeb00;
@@ -150,10 +160,10 @@
   width: 93%;
   height: 93%;
   border-width: 10px;
-  border-color: #fff;
+  border-color: rgb(240, 240, 240);
   transform: rotate(-45deg);
-  top: 12px;
-  left: 12px;
+  top: 20px;
+  left: 20px;
 }
 
 .ellipse.yellow {
@@ -162,8 +172,8 @@
   border-width: 10px;
   border-color: #ffeb00 transparent;
   transform: rotate(-45deg);
-  top: 12px;
-  left: 12px;
+  top: 20px;
+  left: 20px;
   animation: ellipseRotate 15s ease-in-out infinite;
 }
 
@@ -252,6 +262,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden !important;
 }
 
 .overlay h1 {
@@ -266,11 +277,9 @@
 
 @media screen and (max-width:1060px) {
   .text3 {
-    position: absolute;
     top: 25%;
-    right: 50px !important;
-    transform: translateY(-50%);
-    text-align: right;
+    right: 5% !important;
+    left: 3%;
   }
 
   .text3 .title3 {
@@ -280,62 +289,36 @@
 
 }
 
-@media screen and (max-width:975px) {
-  .ellipse-container-2 {
-    width: 308px !important;
-    height: 308px !important;
-    position: absolute;
-    top: 50%;
-    background: url("https://images.unsplash.com/photo-1516685304081-de7947d419d5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80") no-repeat;
-    background-position: 50%;
-    background-size: 100%;
-    left: 75%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    margin: 0 auto;
-    z-index: -1;
-  }
-
-  .text3 {
-    position: absolute;
-    top: 25%;
-    right: 50px !important;
-    transform: translateY(-50%);
-    text-align: right;
-  }
-
-  .text3 .title3 {
-    font-size: 70px !important;
-    padding-top: 180px !important;
-  }
-
-}
 
 @media screen and (max-width:850px) {
   .ellipse-container {
     width: 508px !important;
     height: 508px !important;
     position: absolute;
-    top: 80% !important;
+    top: 55% !important;
     background: url("../Assets/mountains.png") no-repeat;
     background-position: 50%;
     background-size: 70%;
-    left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
     margin: 0 auto;
     z-index: -1;
   }
-
+  .ellipse.thick {
+    top: 17px;
+    left: 17px;
+  }
   
+  .ellipse.yellow {
+    top: 17px;
+    left: 17px;
+  }
 }
 
 
 
 
 @media screen and (max-width:576px) {
-
-
   .logo{
     display:none !important;
   }
@@ -384,7 +367,7 @@
     width: 408px !important;
     height: 408px !important;
     position: absolute;
-    top: 80% !important;
+    top: 70% !important;
     background: url("../Assets/mountains.png") no-repeat;
     background-position: 50%;
     background-size: 70%;
@@ -394,13 +377,23 @@
     margin: 0 auto;
     z-index: -1;
   }
+  .ellipse.thick {
+    top: 14px;
+    left: 14px;
+  }
+  
+  .ellipse.yellow {
+    top: 14px;
+    left: 14px;
+  }
 
   .text3 {
     position: absolute;
-    top: 25%;
+    top: 20%;
     right: 50px !important;
     transform: translateY(-50%);
     text-align: right;
+    font-weight: 850px;
   }
 
   .text3 .title3 {
@@ -413,23 +406,20 @@
   display: none !important;
 }
 
-
-
-  
-
-  
-
 }
 
 @media screen and (max-width:476px) {
+  .wrapper{
+    width: 100%;
+    overflow: hidden !important;
+  }
   .text3 {
     position: absolute;
-    top: 25%;
-    right: 50px !important;
+    top: 20%;
+    right: 30px !important;
     transform: translateY(-50%);
     text-align: right !important;
   }
-
   .text3 .title3 {
     font-size: 50px !important;
     padding-top: 160px !important;
@@ -438,7 +428,7 @@
     width: 308px !important;
     height: 308px !important;
     position: absolute;
-    top: 80% !important;
+    top: 70% !important;
     background: url("../Assets/mountains.png") no-repeat;
     background-position: 50%;
     background-size: 70%;
@@ -447,6 +437,15 @@
     border-radius: 50%;
     margin: 0 auto;
     z-index: -1;
+  }
+  .ellipse.thick {
+    top: 10px;
+    left: 10px;
+  }
+  
+  .ellipse.yellow {
+    top: 10px;
+    left: 10px;
   }
 }
 
