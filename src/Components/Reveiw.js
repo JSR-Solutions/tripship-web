@@ -1,52 +1,54 @@
-import React from "react";
-import { Carousel } from "react-bootstrap";
-import Heas from "../Core/Headings";
-import Person from "../Assets/person.jpg";
-import "../Styles/review.css";
+import React, { useState } from 'react';
+import people from './data';
+import { FaChevronLeft, FaChevronRight, FaQuoteRight } from 'react-icons/fa';
 
-function Review() {
-  const data = [
-    {
-      imgUrl:
-        "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883417/person-3_ipa0mj.jpg",
-      name: "Peter Jones",
-      review:
-        "Sriracha literally flexitarian irony, vape marfa unicorn. Glossier tattooed 8-bit, fixie waistcoat offal activated charcoal slow-carb marfa hell of pabst raclette post-ironic jianbing swag.",
-    },
-    {
-      imgUrl:
-        "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883409/person-2_np9x5l.jpg",
-      name: "Anna Johnson",
-      review:
-        "Helvetica artisan kinfolk thundercats lumbersexual blue bottle. Disrupt glossier gastropub deep v vice franzen hell of brooklyn twee enamel pin fashion axe.photo booth jean shorts artisan narwhal.",
-    },
-  ];
+import "./Review.css";
+
+const Review = () => {
+  const [index, setIndex] = useState(0);
+  const { name, image, text } = people[index];
+  const checkNumber = (number) => {
+    if (number > people.length - 1) {
+      return 0;
+    }
+    if (number < 0) {
+      return people.length - 1;
+    }
+    return number;
+  };
+  const nextPerson = () => {
+    setIndex((index) => {
+      let newIndex = index + 1;
+      return checkNumber(newIndex);
+    });
+  };
+  const prevPerson = () => {
+    setIndex((index) => {
+      let newIndex = index - 1;
+      return checkNumber(newIndex);
+    });
+  };
 
   return (
-    <div>
-      <Heas text="Happy Customers" />
-      <br></br>
-      <br></br>
-
-      <Carousel className="h_review">
-        {data.map((dat) => {
-          return (
-            <Carousel.Item>
-              <div>
-                <div className="img-container">
-                  <img className="review_img" src={dat.imgUrl} />
-                </div>
-                <h2>{dat.name}</h2>
-                <div className="review_p">
-                  <p>{dat.review}</p>
-                </div>
-              </div>
-            </Carousel.Item>
-          );
-        })}
-      </Carousel>
-    </div>
+    <article className='review'>
+      <div className='img-container'>
+        <img src={image} alt={name} className='person-img' />
+        <span className='quote-icon'>
+          <FaQuoteRight />
+        </span>
+      </div>
+      <h4 className='author'>{name}</h4>
+      <p className='info'>{text}</p>
+      <div className='button-container'>
+        <button className='prev-btn' onClick={prevPerson}>
+          <FaChevronLeft />
+        </button>
+        <button className='next-btn' onClick={nextPerson}>
+          <FaChevronRight />
+        </button>
+      </div>
+    </article>
   );
-}
-export default Review;
+};
 
+export default Review;

@@ -3,6 +3,7 @@ import Landing from "../Components/Landingscreen";
 import Carousel from "../Components/Carousel";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
+import Heas from "../Core/Headings";
 import "./Home.css";
 import Review from "../Components/Reveiw";
 
@@ -15,7 +16,10 @@ const Home = () => {
       <div id="trending">
         <Carousel title="Trending Trips" />
       </div>
-      <Review />
+      <div className="reviewss">
+        <Heas text="Happy Customers" />
+        <Review />
+      </div>
       <Footer />
     </div>
   );
