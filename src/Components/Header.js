@@ -138,7 +138,7 @@ const Header = ({ history }) => {
                     </Link>
                     <a
                       className="deconone id-link"
-                      href="#trending"
+                      href="/#trending"
                     >
                       <li>Trending Trips</li>
                     </a>
