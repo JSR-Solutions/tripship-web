@@ -33,8 +33,8 @@ const Singlepackage = (props) => {
 
   useEffect(() => {
     setFetching(true);
-    db.collection('Backpacking Trips')
-      .doc('Gz20DrQmVIxAWwNXDtRF')
+    db.collection(props.match.params.category)
+      .doc(props.match.params.packageId)
       .get()
       .then((ress) => {
         if (ress.data()) {
@@ -46,8 +46,8 @@ const Singlepackage = (props) => {
             setFetching(false);
           }
         } else {
-            setFetching(false);
-            setpack("");
+          setFetching(false);
+          setpack("");
         }
       });
   }, []);
@@ -71,8 +71,8 @@ const Singlepackage = (props) => {
     }
   }, []);
 
-  if(isFetching) {
-    return <Loader />
+  if (isFetching) {
+    return <Loader />;
   }
 
   return (
@@ -82,11 +82,11 @@ const Singlepackage = (props) => {
       <div className="img-carou">
         <div className="single-package-upper">
           <Carousel>
-            {pack &&
+            {pack && (
               <Carousel.Item>
                 <img style={{ height: "700px" }} src={pack.imageUrl} alt="sk" />
               </Carousel.Item>
-            }
+            )}
           </Carousel>
         </div>
       </div>
@@ -104,15 +104,15 @@ const Singlepackage = (props) => {
                       <hr />
                       <h5>
                         <GiNetworkBars className="single-pck-1-row-icon" />
-                          Level - {pack.duration}
+                        Level - {pack.duration}
                       </h5>
                       <h5>
                         <AiOutlineSafetyCertificate className="single-pck-1-row-icon" />
-                          Package Type - {pack.packageType}
+                        Package Type - {pack.packageType}
                       </h5>
                       <h5>
                         <AiOutlineFieldTime className="single-pck-1-row-icon" />
-                          Duration - {pack.duration}
+                        Duration - {pack.duration}
                       </h5>
                       <hr />
                     </div>
@@ -179,10 +179,7 @@ const Singlepackage = (props) => {
                       </div>
                     </div>
                     {/* DETAILED ITINERARY */}
-                    <div
-                      className="sngl-pack-short-itn"
-                      id="detailedItinerary"
-                    >
+                    <div className="sngl-pack-short-itn" id="detailedItinerary">
                       <div className="single-pck-2-row">
                         <div className="single-pack-side-design"></div>
                         <h4>Detailed Itinerary</h4>
@@ -212,9 +209,7 @@ const Singlepackage = (props) => {
                               <Row>
                                 <Col lg={6}>
                                   <div className="sng-prc-tag1">
-                                    <h5>
-                                      Option {k + 1}
-                                    </h5>
+                                    <h5>Option {k + 1}</h5>
                                     <h6>
                                       <AiOutlineFieldTime
                                         style={{ fontSize: "21px" }}
@@ -225,9 +220,12 @@ const Singlepackage = (props) => {
                                 </Col>
                                 <Col lg={6}>
                                   <div className="sng-prc-tag2">
-                                    <h6><FaRupeeSign /> {parseInt(l.cost) + 1000}</h6>
+                                    <h6>
+                                      <FaRupeeSign /> {parseInt(l.cost) + 1000}
+                                    </h6>
                                     <h5>
-                                      <span>{l.type}</span> : <FaRupeeSign /> {l.cost}
+                                      <span>{l.type}</span> : <FaRupeeSign />{" "}
+                                      {l.cost}
                                     </h5>
                                   </div>
                                 </Col>
@@ -335,7 +333,6 @@ const Singlepackage = (props) => {
       <Footer />
     </div>
   );
-
 };
 
 export default Singlepackage;
@@ -361,7 +358,6 @@ export default Singlepackage;
 //                      </div>
 //                    </div>
 
-
 // <div className="sngl-pack-short-itn">
 //                       <div className="single-pck-2-row">
 //                         <div className="single-pack-side-design"></div>
@@ -376,8 +372,6 @@ export default Singlepackage;
 //                           ))}
 //                       </div>
 //                     </div>
-
-
 
 // <div className="sngl-pack-short-itn" id="gallery">
 // <div className="single-pck-2-row">

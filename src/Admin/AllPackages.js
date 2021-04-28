@@ -101,6 +101,7 @@ function AllPackages() {
               name="package-type"
               value={packageType}
             >
+              <option>Trending Trips</option>
               <option>Treks</option>
               <option>Backpacking Trips</option>
               <option>Bike Trips</option>
