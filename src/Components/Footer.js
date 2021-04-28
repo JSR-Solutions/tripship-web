@@ -14,17 +14,11 @@ const Footer = () => {
             <h5 className="headin5_amrc col_white_amrc pt2">About Us</h5>
 
             <p className="mb10">
-              TRIPSHRIP is a community of travel enthusiasts who are passionate
-              about adventure. We at TRIPSHRIP work towards creating an
-              environment for thrill seekers by providing them memorable
-              experiences. Our services include road trips, trekking
-              expeditions, backpacking trips, corporate trips, and customized
-              tour packages and that too at a very reasonable rate. We want to
-              make adventure affordable for everyone because we believe in
-              'Adventure for all, all for Adventure'. We keep on surprising our
-              family members with new experiences because thats what they expect
-              us to do. SO what are you waiting for, join us and be a part of
-              this evergrowing family.
+              TRIPSHRIP is known for adventure. We provide the most reasonable
+              truly adventurous experience to our clients which makes us the
+              best in this field. We curate most amazing Trekking, backpacking,
+              and biking expeditions along with our customized tour packages. So
+              come book with us a date full of adventure and madness.
             </p>
             <p className="mb10">
               <i className="fa fa-location-arrow"></i> address{" "}
@@ -42,47 +36,46 @@ const Footer = () => {
 
             <ul className="footer_ul_amrc">
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/packages/Trending%20Trips/4NQLbvNXTUWaC4jMnTs6">
+                  Chandrashila
+                </Link>
               </li>
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/packages/Trending%20Trips/PImOBNSjfTAHenm5ATSi">
+                  Kasol Kheerganga
+                </Link>
               </li>
               <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/">Home</Link>
+                <Link to="/packages/Trending%20Trips/kCccS61bm7JkDmOLsSGU">
+                  Manali Sissu
+                </Link>
               </li>
             </ul>
 
-            <h5 className="headin5_amrc col_white_amrc pt2">
-              Backpacking Trips
-            </h5>
+            <h5 className="headin5_amrc col_white_amrc pt2">Treks</h5>
 
             <ul className="footer_ul_amrc">
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/packages/Trending%20Trips/4NQLbvNXTUWaC4jMnTs6">
+                  Chandrashila
+                </Link>
               </li>
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/packages/Trending%20Trips/PImOBNSjfTAHenm5ATSi">
+                  Kasol Kheerganga
+                </Link>
               </li>
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/">Har Ki Dun</Link>
               </li>
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/">Kedarnath</Link>
               </li>
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/">Kedarkantha</Link>
               </li>
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/">Mcleodganj Triund</Link>
               </li>
             </ul>
           </Col>
@@ -92,45 +85,26 @@ const Footer = () => {
 
             <ul className="footer_ul_amrc">
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/">Leh Ladakh</Link>
               </li>
               <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/">Home</Link>
+                <Link to="/">Spiti Valley</Link>
               </li>
             </ul>
 
-            <h5 className="headin5_amrc col_white_amrc pt2">Treks</h5>
+            <h5 className="headin5_amrc col_white_amrc pt2">
+              Backpacking Trips
+            </h5>
 
             <ul className="footer_ul_amrc">
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/">Himachal Pradesh</Link>
               </li>
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/">Uttarakhand</Link>
               </li>
               <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/">Home</Link>
+                <Link to="/">Kashmir</Link>
               </li>
             </ul>
           </Col>
