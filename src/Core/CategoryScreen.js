@@ -215,7 +215,7 @@ function CategoryScreen(props) {
       <Row>
         {packages.map((pckg) => {
           return (
-            <Col lg={3} md={4} sm={12}>
+            <Col xl = {3} lg={4} md={6} sm={12}>
               <Link
                 className="package-card"
                 to={`/packages/${props.match.params.category}/${pckg.packageId}`}
@@ -224,7 +224,7 @@ function CategoryScreen(props) {
                   date="5"
                   headi={pckg.name}
                   text={`${pckg.overviews[0].substring(0, 80)}...`}
-                  food="0"
+                  food="1"
                   stay="1"
                   sight="1"
                   travel="1"
