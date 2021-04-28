@@ -97,7 +97,7 @@ function CardCarousel(props) {
                 stay="1"
                 sight="1"
                 travel="1"
-                image={pckg.imageUrl}
+                image={pckg.data.imageUrl}
               />
             </Link>
           );
