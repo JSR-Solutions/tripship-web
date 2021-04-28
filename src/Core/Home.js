@@ -4,8 +4,7 @@ import Carousel from "../Components/Carousel";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import "./Home.css";
-
-
+import Review from "../Components/Reveiw";
 
 const Home = () => {
   return (
@@ -13,12 +12,10 @@ const Home = () => {
       <Header />
       <Landing />
 
-      
-
       <div id="trending">
         <Carousel title="Trending Trips" />
       </div>
-
+      <Review />
       <Footer />
     </div>
   );
