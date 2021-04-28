@@ -139,6 +139,10 @@
     font-size: 14px;
     font-weight: normal;
   }
+
+  .sec-one-content p {
+    margin-left: 0 !important;
+  }
   
   
   
