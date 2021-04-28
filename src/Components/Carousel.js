@@ -92,12 +92,13 @@ function CardCarousel(props) {
 
                 headi={pckg.data.name}
                 text={pckg.data.overviews && pckg.data.overviews[0].substring(0, 80)}
-
+                duration = {pckg.data.duration}
                 food="0"
                 stay="1"
                 sight="1"
                 travel="1"
                 image={pckg.data.imageUrl}
+                cost = {pckg.data.pricing[0].cost}
               />
             </Link>
           );
