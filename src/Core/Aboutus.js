@@ -158,11 +158,11 @@ const Screen = () => {
         <div className="wrapper">
           <div className="nav">
             <div ref={logo} className="logo">
-              <h1>
+              {/* <h1>
                 <span>ABOUT US</span>
                 <br />
                 _____________
-              </h1>
+              </h1> */}
             </div>
 
             <div ref={menu_links_ul_li} className="menu-links">

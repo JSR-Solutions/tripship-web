@@ -167,11 +167,11 @@ function CategoryScreen(props) {
 
         <div className="nav">
           <div ref={logo} className="logo">
-            <h1>
+            {/* <h1>
               <span>TripShrip</span>
               <br />
               _____________
-            </h1>
+            </h1> */}
           </div>
 
           <div ref={menu_links_ul_li} className="menu-links">
