@@ -320,16 +320,16 @@ const Screen = () => {
           </Container>
           <br/><br/><br/>
           <Row className="teams-row">
-          <Col className="carditeam" xs={12} md={6} lg={3}>
+          <Col className="carditeam" xs={12} md={6} lg={6} xl={3}>
           <Card name="Sparsh Vij" img={Sparsh} detail="Managing Director" />
         </Col>
-        <Col className="carditeam" xs={12} md={6} lg={3}>
+        <Col className="carditeam" xs={12} md={6} lg={6} xl={3}>
                 <Card name="Sajid " img={Priyankar} detail="COO" />
               </Col>
-              <Col className="carditeam" xs={12} md={6} lg={3}>
+              <Col className="carditeam" xs={12} md={6} lg={6} xl={3}>
                 <Card name="Vaibhav" img={Vaibhav} detail="Operations and Sales" />
               </Col>
-              <Col className="carditeam" xs={12} md={6} lg={3}>
+              <Col className="carditeam" xs={12} md={6} lg={6} xl={3}>
                 <Card name="Priyankar" img={Priyankar} detail="Tour Manager" />
               </Col>
           </Row>
