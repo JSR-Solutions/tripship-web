@@ -155,7 +155,7 @@ function CategoryScreen(props) {
   }
 
   return (
-    <div>
+    <div className='category-screen-main'>
       <Header />
 
       <div ref={overlay} className="overlay">
@@ -164,10 +164,11 @@ function CategoryScreen(props) {
       </div>
 
       <div className="wrapper">
+
         <div className="nav">
           <div ref={logo} className="logo">
             <h1>
-              <span>{props.match.params.category}</span>
+              <span>TripShrip</span>
               <br />
               _____________
             </h1>
@@ -182,7 +183,7 @@ function CategoryScreen(props) {
           </div>
 
           <div ref={scrolldown} className="scrolldown">
-            {props.match.params.category}
+            TripShrip
           </div>
         </div>
 
@@ -209,6 +210,8 @@ function CategoryScreen(props) {
           <div ref={circle2} className="circle2"></div>
         </div>
       </div>
+
+
       <Row>
         {packages.map((pckg) => {
           return (
