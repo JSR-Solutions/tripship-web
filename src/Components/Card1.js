@@ -36,7 +36,8 @@ function Card(props) {
           style={{ backgroundImage: `url(${props.image})` }}
         ></div>
         <div className="card-text">
-          <span className="date">{props.date} days ago</span>
+          <span className="date">Duration : {props.duration}</span>
+          <span className="date">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Starts at {props.cost}/-</span>
           <h2>{props.headi}</h2>
           <p>
             {props.text}

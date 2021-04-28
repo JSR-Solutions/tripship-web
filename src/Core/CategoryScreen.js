@@ -229,6 +229,9 @@ function CategoryScreen(props) {
                   sight="1"
                   travel="1"
                   image={pckg.imageUrl}
+                  duration={pckg.duration}
+
+                  cost={pckg.pricing[0].cost}
                 />
               </Link>
             </Col>
