@@ -268,8 +268,8 @@
     width: 508px !important;
     height: 508px !important;
     position: absolute;
-    top: 80% !important;
-    background: url("../Assets/mountains.png") no-repeat;
+    top: 80% !important;  background: url("../Assets/logo.jfif") no-repeat;
+
     background-position: 50%;
     background-size: 70%;
     left: 50%;
@@ -365,8 +365,8 @@
     width: 408px !important;
     height: 408px !important;
     position: absolute;
-    top: 80% !important;
-    background: url("../Assets/mountains.png") no-repeat;
+    top: 80% !important;  background: url("../Assets/logo.jfif") no-repeat;
+
     background-position: 50%;
     background-size: 70%;
     left: 50%;
@@ -453,8 +453,8 @@
     width: 358px !important;
     height: 358px !important;
     position: absolute;
-    top: 80% !important;
-    background: url("../Assets/mountains.png") no-repeat;
+    top: 80% !important;  background: url("../Assets/logo.jfif") no-repeat;
+
     background-position: 50%;
     background-size: 70%;
     left: 50%;
