@@ -5,7 +5,7 @@ import { Card, Col, Row, Button } from "react-bootstrap";
 import "./AdminDashboard.css";
 import packages from "../Assets/packages.png";
 import addpackage from "../Assets/addpackage.png";
-import allusers from "../Assets/allusers.png";
+import reviews from "../Assets/reviews.png";
 import booking from "../Assets/booking.png";
 import callbackrequest from "../Assets/callbackrequest.png";
 import custompackage from "../Assets/custompackage.png";
@@ -53,9 +53,9 @@ function AdminDashboard() {
           </Col>
           <Col lg={4}>
             <AdminCard
-              img={allusers}
-              title="All Users"
-              link="/admin/users"
+              img={reviews}
+              title="Reviews"
+              link="/admin/reviews"
             />
           </Col>
           <Col lg={4}>

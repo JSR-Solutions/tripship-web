@@ -21,8 +21,10 @@ import UserRegistration from "./Auth/UserRegistration";
 import AllUsers from "./Admin/AllUsers";
 import EditUserDetails from "./Auth/EditUserDetails";
 import UserDashboard from "./Core/UserDashboard";
-import Singlepackage from './Core/Singlepackagescreen/Singlepackage';
+import Singlepackage from "./Core/Singlepackagescreen/Singlepackage";
 import CategoryScreen from "./Core/CategoryScreen";
+import AllReviews from "./Admin/AllReviews";
+import AddReview from "./Admin/AddReview";
 
 function App() {
   return (
@@ -36,7 +38,11 @@ function App() {
           <Route path="/admin/login" exact component={AdminLogin} />
           <Route path="/signin" exact component={SignIn} />
           <Route path="/packages/:category" exact component={CategoryScreen} />
-          <Route path="/packages/:category/:packageId" exact component={Singlepackage} />
+          <Route
+            path="/packages/:category/:packageId"
+            exact
+            component={Singlepackage}
+          />
           <Route path="/signup" exact component={SignUp} />
           <Route path="/register" exact component={UserRegistration} />
           <Route path="/user/editprofile" exact component={EditUserDetails} />
@@ -53,6 +59,8 @@ function App() {
             exact
             component={CallbackRequests}
           />
+          <AdminRoute path="/admin/reviews" exact component={AllReviews} />
+          <AdminRoute path="/admin/reviews/add" exact component={AddReview} />
           <AdminRoute
             path="/admin/customrequests"
             exact
