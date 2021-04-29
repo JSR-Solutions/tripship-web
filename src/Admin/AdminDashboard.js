@@ -1,6 +1,6 @@
 import React from "react";
 import AdminSidebar from "./AdminSidebar";
-import { Card, Col, Row, Button } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 
 import "./AdminDashboard.css";
 import packages from "../Assets/packages.png";
@@ -9,7 +9,6 @@ import reviews from "../Assets/reviews.png";
 import booking from "../Assets/booking.png";
 import callbackrequest from "../Assets/callbackrequest.png";
 import custompackage from "../Assets/custompackage.png";
-import { Link } from "react-router-dom";
 import AdminCard from "./AdminCard";
 
 function AdminDashboard() {
